@@ -26,11 +26,7 @@ class LoginViewModel {
     
     func signIn(email: String, password: String, completion: @escaping (Error?) -> ()) {
         firebaseAuth.signIn(email: email, password: password) { _, error in
-            if let error = error {
-                completion(error)
-            } else {
-                completion(nil)
-            }
+            completion(error)
         }
     }
     

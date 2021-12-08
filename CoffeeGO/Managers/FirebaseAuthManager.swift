@@ -28,7 +28,20 @@ struct FirebaseAuthManager {
         }
     }
     
-    func signUp() {
-        
+    func signUp(email: String, password: String, completion: @escaping (AuthDataResult?, Error?) -> ()) {
+        firebaseAuth.createUser(withEmail: email, password: password) { authResult, error in
+            completion(authResult, error)
+          }
+    }
+    func verifyUser(completion: @escaping (Error?) -> ()) {
+        firebaseAuth.currentUser?.sendEmailVerification { error in
+            completion(error)
+        }
+    }
+    func isEmailVerified() -> Bool {
+        guard let isVerified = firebaseAuth.currentUser?.isEmailVerified else {
+            return false
+        }
+        return isVerified
     }
 }
