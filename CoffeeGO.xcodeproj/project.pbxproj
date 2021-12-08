@@ -17,8 +17,19 @@
 		20BDBB6C27610864001D7822 /* FirebaseAuthManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20BDBB6B27610864001D7822 /* FirebaseAuthManager.swift */; };
 		20BDBB6F27611079001D7822 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20BDBB6E27611079001D7822 /* LoginViewModel.swift */; };
 		20BDBB712761137C001D7822 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20BDBB702761137C001D7822 /* Extensions.swift */; };
+		20BDBB7927613404001D7822 /* CoffeeGOTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20BDBB7827613404001D7822 /* CoffeeGOTests.swift */; };
 		22C62992BE20EC61D546CD13 /* Pods_CoffeeGO.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 18ED16EC2F85A86301FB8D40 /* Pods_CoffeeGO.framework */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		20BDBB7A27613404001D7822 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 201BFBAB276100AC0058C974 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 201BFBB2276100AC0058C974;
+			remoteInfo = CoffeeGO;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		18ED16EC2F85A86301FB8D40 /* Pods_CoffeeGO.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CoffeeGO.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -34,6 +45,8 @@
 		20BDBB6B27610864001D7822 /* FirebaseAuthManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseAuthManager.swift; sourceTree = "<group>"; };
 		20BDBB6E27611079001D7822 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
 		20BDBB702761137C001D7822 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		20BDBB7627613404001D7822 /* CoffeeGOTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CoffeeGOTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		20BDBB7827613404001D7822 /* CoffeeGOTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoffeeGOTests.swift; sourceTree = "<group>"; };
 		3F819AB5AED9B6C0A2F30BAA /* Pods-CoffeeGO.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CoffeeGO.debug.xcconfig"; path = "Target Support Files/Pods-CoffeeGO/Pods-CoffeeGO.debug.xcconfig"; sourceTree = "<group>"; };
 		6E16732A284D63AD0D97C614 /* Pods-CoffeeGO.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CoffeeGO.release.xcconfig"; path = "Target Support Files/Pods-CoffeeGO/Pods-CoffeeGO.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -47,6 +60,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		20BDBB7327613404001D7822 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -54,6 +74,7 @@
 			isa = PBXGroup;
 			children = (
 				201BFBB5276100AC0058C974 /* CoffeeGO */,
+				20BDBB7727613404001D7822 /* CoffeeGOTests */,
 				201BFBB4276100AC0058C974 /* Products */,
 				87D31BC6E1632AEF5869261A /* Pods */,
 				E56DBA87A779B7A77BAE4560 /* Frameworks */,
@@ -64,6 +85,7 @@
 			isa = PBXGroup;
 			children = (
 				201BFBB3276100AC0058C974 /* CoffeeGO.app */,
+				20BDBB7627613404001D7822 /* CoffeeGOTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -118,6 +140,14 @@
 			path = Managers;
 			sourceTree = "<group>";
 		};
+		20BDBB7727613404001D7822 /* CoffeeGOTests */ = {
+			isa = PBXGroup;
+			children = (
+				20BDBB7827613404001D7822 /* CoffeeGOTests.swift */,
+			);
+			path = CoffeeGOTests;
+			sourceTree = "<group>";
+		};
 		87D31BC6E1632AEF5869261A /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -157,6 +187,24 @@
 			productReference = 201BFBB3276100AC0058C974 /* CoffeeGO.app */;
 			productType = "com.apple.product-type.application";
 		};
+		20BDBB7527613404001D7822 /* CoffeeGOTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 20BDBB7C27613404001D7822 /* Build configuration list for PBXNativeTarget "CoffeeGOTests" */;
+			buildPhases = (
+				20BDBB7227613404001D7822 /* Sources */,
+				20BDBB7327613404001D7822 /* Frameworks */,
+				20BDBB7427613404001D7822 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				20BDBB7B27613404001D7822 /* PBXTargetDependency */,
+			);
+			name = CoffeeGOTests;
+			productName = CoffeeGOTests;
+			productReference = 20BDBB7627613404001D7822 /* CoffeeGOTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -169,6 +217,10 @@
 				TargetAttributes = {
 					201BFBB2276100AC0058C974 = {
 						CreatedOnToolsVersion = 13.1;
+					};
+					20BDBB7527613404001D7822 = {
+						CreatedOnToolsVersion = 13.1;
+						TestTargetID = 201BFBB2276100AC0058C974;
 					};
 				};
 			};
@@ -186,6 +238,7 @@
 			projectRoot = "";
 			targets = (
 				201BFBB2276100AC0058C974 /* CoffeeGO */,
+				20BDBB7527613404001D7822 /* CoffeeGOTests */,
 			);
 		};
 /* End PBXProject section */
@@ -199,6 +252,13 @@
 				201BFBCB2761018C0058C974 /* GoogleService-Info.plist in Resources */,
 				201BFBC0276100B00058C974 /* Assets.xcassets in Resources */,
 				201BFBBE276100AC0058C974 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		20BDBB7427613404001D7822 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -260,7 +320,23 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		20BDBB7227613404001D7822 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				20BDBB7927613404001D7822 /* CoffeeGOTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		20BDBB7B27613404001D7822 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 201BFBB2276100AC0058C974 /* CoffeeGO */;
+			targetProxy = 20BDBB7A27613404001D7822 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		201BFBBC276100AC0058C974 /* Main.storyboard */ = {
@@ -456,6 +532,54 @@
 			};
 			name = Release;
 		};
+		20BDBB7D27613404001D7822 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = BJUL9DNG5D;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.MohamedKAttar.CoffeeGOTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/CoffeeGO.app/CoffeeGO";
+			};
+			name = Debug;
+		};
+		20BDBB7E27613404001D7822 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = BJUL9DNG5D;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.MohamedKAttar.CoffeeGOTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/CoffeeGO.app/CoffeeGO";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -473,6 +597,15 @@
 			buildConfigurations = (
 				201BFBC8276100B00058C974 /* Debug */,
 				201BFBC9276100B00058C974 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		20BDBB7C27613404001D7822 /* Build configuration list for PBXNativeTarget "CoffeeGOTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				20BDBB7D27613404001D7822 /* Debug */,
+				20BDBB7E27613404001D7822 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
