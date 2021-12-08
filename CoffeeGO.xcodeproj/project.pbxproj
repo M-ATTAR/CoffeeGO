@@ -1,0 +1,483 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 55;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		201BFBB7276100AC0058C974 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 201BFBB6276100AC0058C974 /* AppDelegate.swift */; };
+		201BFBB9276100AC0058C974 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 201BFBB8276100AC0058C974 /* SceneDelegate.swift */; };
+		201BFBBB276100AC0058C974 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 201BFBBA276100AC0058C974 /* LoginViewController.swift */; };
+		201BFBBE276100AC0058C974 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 201BFBBC276100AC0058C974 /* Main.storyboard */; };
+		201BFBC0276100B00058C974 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 201BFBBF276100B00058C974 /* Assets.xcassets */; };
+		201BFBC3276100B00058C974 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 201BFBC1276100B00058C974 /* LaunchScreen.storyboard */; };
+		201BFBCB2761018C0058C974 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 201BFBCA2761018C0058C974 /* GoogleService-Info.plist */; };
+		20BDBB6C27610864001D7822 /* FirebaseAuthManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20BDBB6B27610864001D7822 /* FirebaseAuthManager.swift */; };
+		20BDBB6F27611079001D7822 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20BDBB6E27611079001D7822 /* LoginViewModel.swift */; };
+		20BDBB712761137C001D7822 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20BDBB702761137C001D7822 /* Extensions.swift */; };
+		22C62992BE20EC61D546CD13 /* Pods_CoffeeGO.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 18ED16EC2F85A86301FB8D40 /* Pods_CoffeeGO.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		18ED16EC2F85A86301FB8D40 /* Pods_CoffeeGO.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CoffeeGO.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		201BFBB3276100AC0058C974 /* CoffeeGO.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CoffeeGO.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		201BFBB6276100AC0058C974 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		201BFBB8276100AC0058C974 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		201BFBBA276100AC0058C974 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		201BFBBD276100AC0058C974 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		201BFBBF276100B00058C974 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		201BFBC2276100B00058C974 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		201BFBC4276100B00058C974 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		201BFBCA2761018C0058C974 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		20BDBB6B27610864001D7822 /* FirebaseAuthManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseAuthManager.swift; sourceTree = "<group>"; };
+		20BDBB6E27611079001D7822 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
+		20BDBB702761137C001D7822 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		3F819AB5AED9B6C0A2F30BAA /* Pods-CoffeeGO.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CoffeeGO.debug.xcconfig"; path = "Target Support Files/Pods-CoffeeGO/Pods-CoffeeGO.debug.xcconfig"; sourceTree = "<group>"; };
+		6E16732A284D63AD0D97C614 /* Pods-CoffeeGO.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CoffeeGO.release.xcconfig"; path = "Target Support Files/Pods-CoffeeGO/Pods-CoffeeGO.release.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		201BFBB0276100AC0058C974 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				22C62992BE20EC61D546CD13 /* Pods_CoffeeGO.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		201BFBAA276100AC0058C974 = {
+			isa = PBXGroup;
+			children = (
+				201BFBB5276100AC0058C974 /* CoffeeGO */,
+				201BFBB4276100AC0058C974 /* Products */,
+				87D31BC6E1632AEF5869261A /* Pods */,
+				E56DBA87A779B7A77BAE4560 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		201BFBB4276100AC0058C974 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				201BFBB3276100AC0058C974 /* CoffeeGO.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		201BFBB5276100AC0058C974 /* CoffeeGO */ = {
+			isa = PBXGroup;
+			children = (
+				201BFBB6276100AC0058C974 /* AppDelegate.swift */,
+				201BFBB8276100AC0058C974 /* SceneDelegate.swift */,
+				20BDBB702761137C001D7822 /* Extensions.swift */,
+				20BDBB6D27610BE1001D7822 /* Managers */,
+				20BDBB682761067C001D7822 /* Model */,
+				20BDBB6A27610696001D7822 /* View */,
+				20BDBB6927610688001D7822 /* ViewModel */,
+				201BFBBF276100B00058C974 /* Assets.xcassets */,
+				201BFBC4276100B00058C974 /* Info.plist */,
+				201BFBCA2761018C0058C974 /* GoogleService-Info.plist */,
+			);
+			path = CoffeeGO;
+			sourceTree = "<group>";
+		};
+		20BDBB682761067C001D7822 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		20BDBB6927610688001D7822 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				20BDBB6E27611079001D7822 /* LoginViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		20BDBB6A27610696001D7822 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				201BFBBA276100AC0058C974 /* LoginViewController.swift */,
+				201BFBBC276100AC0058C974 /* Main.storyboard */,
+				201BFBC1276100B00058C974 /* LaunchScreen.storyboard */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		20BDBB6D27610BE1001D7822 /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+				20BDBB6B27610864001D7822 /* FirebaseAuthManager.swift */,
+			);
+			path = Managers;
+			sourceTree = "<group>";
+		};
+		87D31BC6E1632AEF5869261A /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				3F819AB5AED9B6C0A2F30BAA /* Pods-CoffeeGO.debug.xcconfig */,
+				6E16732A284D63AD0D97C614 /* Pods-CoffeeGO.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		E56DBA87A779B7A77BAE4560 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				18ED16EC2F85A86301FB8D40 /* Pods_CoffeeGO.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		201BFBB2276100AC0058C974 /* CoffeeGO */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 201BFBC7276100B00058C974 /* Build configuration list for PBXNativeTarget "CoffeeGO" */;
+			buildPhases = (
+				5ABC69AFC0E8B1CA630BD72D /* [CP] Check Pods Manifest.lock */,
+				201BFBAF276100AC0058C974 /* Sources */,
+				201BFBB0276100AC0058C974 /* Frameworks */,
+				201BFBB1276100AC0058C974 /* Resources */,
+				03692A8D28B13CF6217DD0F4 /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = CoffeeGO;
+			productName = CoffeeGO;
+			productReference = 201BFBB3276100AC0058C974 /* CoffeeGO.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		201BFBAB276100AC0058C974 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1310;
+				LastUpgradeCheck = 1310;
+				TargetAttributes = {
+					201BFBB2276100AC0058C974 = {
+						CreatedOnToolsVersion = 13.1;
+					};
+				};
+			};
+			buildConfigurationList = 201BFBAE276100AC0058C974 /* Build configuration list for PBXProject "CoffeeGO" */;
+			compatibilityVersion = "Xcode 13.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 201BFBAA276100AC0058C974;
+			productRefGroup = 201BFBB4276100AC0058C974 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				201BFBB2276100AC0058C974 /* CoffeeGO */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		201BFBB1276100AC0058C974 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				201BFBC3276100B00058C974 /* LaunchScreen.storyboard in Resources */,
+				201BFBCB2761018C0058C974 /* GoogleService-Info.plist in Resources */,
+				201BFBC0276100B00058C974 /* Assets.xcassets in Resources */,
+				201BFBBE276100AC0058C974 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		03692A8D28B13CF6217DD0F4 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-CoffeeGO/Pods-CoffeeGO-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-CoffeeGO/Pods-CoffeeGO-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-CoffeeGO/Pods-CoffeeGO-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		5ABC69AFC0E8B1CA630BD72D /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-CoffeeGO-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		201BFBAF276100AC0058C974 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				201BFBBB276100AC0058C974 /* LoginViewController.swift in Sources */,
+				20BDBB712761137C001D7822 /* Extensions.swift in Sources */,
+				201BFBB7276100AC0058C974 /* AppDelegate.swift in Sources */,
+				20BDBB6C27610864001D7822 /* FirebaseAuthManager.swift in Sources */,
+				20BDBB6F27611079001D7822 /* LoginViewModel.swift in Sources */,
+				201BFBB9276100AC0058C974 /* SceneDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		201BFBBC276100AC0058C974 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				201BFBBD276100AC0058C974 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		201BFBC1276100B00058C974 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				201BFBC2276100B00058C974 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		201BFBC5276100B00058C974 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		201BFBC6276100B00058C974 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		201BFBC8276100B00058C974 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3F819AB5AED9B6C0A2F30BAA /* Pods-CoffeeGO.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = BJUL9DNG5D;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = CoffeeGO/Info.plist;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.MohamedKAttar.CoffeeGO;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Debug;
+		};
+		201BFBC9276100B00058C974 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6E16732A284D63AD0D97C614 /* Pods-CoffeeGO.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = BJUL9DNG5D;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = CoffeeGO/Info.plist;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.MohamedKAttar.CoffeeGO;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		201BFBAE276100AC0058C974 /* Build configuration list for PBXProject "CoffeeGO" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				201BFBC5276100B00058C974 /* Debug */,
+				201BFBC6276100B00058C974 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		201BFBC7276100B00058C974 /* Build configuration list for PBXNativeTarget "CoffeeGO" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				201BFBC8276100B00058C974 /* Debug */,
+				201BFBC9276100B00058C974 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 201BFBAB276100AC0058C974 /* Project object */;
+}
