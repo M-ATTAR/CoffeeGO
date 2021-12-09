@@ -6,25 +6,41 @@
 //
 
 import UIKit
-
-class VerificationViewModel {
-    let firebaseAuth = FirebaseAuthManager()
-    
-    func isVerified() -> Bool {
-        return firebaseAuth.isEmailVerified()
-    }
-}
+import RxSwift
+import RxCocoa
 
 class VerificationViewController: UIViewController {
     
     let viewModel = VerificationViewModel()
+    var role: String?
+    
+    @IBOutlet weak var roleLabel: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        viewModel.printUserData()
+        
+        roleLabel.text = role
+    }
+    
+    @IBAction func signOutTapped(_ sender: UIButton) {
+        viewModel.signOut() { error in
+            if let error = error {
+                print(error.localizedDescription)
+            } else {
+                let nc = UIStoryboard(name: "Main", bundle: .main).instantiateViewController(withIdentifier: K.rootNC) as! UINavigationController
+                (UIApplication.shared.connectedScenes.first?.delegate as? SceneDelegate)?.setRootViewController(nc)
+            }
+        }
     }
     
     override func viewDidAppear(_ animated: Bool) {
-        view.backgroundColor = viewModel.isVerified() ? UIColor.green : UIColor.red
+        super.viewDidAppear(animated)
+        
+        
+    }
+    override func viewDidDisappear(_ animated: Bool) {
+        super.viewDidDisappear(animated)
+
     }
 }

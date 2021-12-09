@@ -21,6 +21,8 @@
 		20BDBB8027613546001D7822 /* RegisterViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20BDBB7F27613546001D7822 /* RegisterViewModel.swift */; };
 		20BDBB82276138AF001D7822 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20BDBB81276138AF001D7822 /* RegisterViewController.swift */; };
 		20BDBB842761475A001D7822 /* VerificationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20BDBB832761475A001D7822 /* VerificationViewController.swift */; };
+		20BDBB8627622DF7001D7822 /* K.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20BDBB8527622DF7001D7822 /* K.swift */; };
+		20BDBB8827622EF1001D7822 /* VerificationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20BDBB8727622EF1001D7822 /* VerificationViewModel.swift */; };
 		22C62992BE20EC61D546CD13 /* Pods_CoffeeGO.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 18ED16EC2F85A86301FB8D40 /* Pods_CoffeeGO.framework */; };
 /* End PBXBuildFile section */
 
@@ -53,6 +55,8 @@
 		20BDBB7F27613546001D7822 /* RegisterViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewModel.swift; sourceTree = "<group>"; };
 		20BDBB81276138AF001D7822 /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		20BDBB832761475A001D7822 /* VerificationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerificationViewController.swift; sourceTree = "<group>"; };
+		20BDBB8527622DF7001D7822 /* K.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = K.swift; sourceTree = "<group>"; };
+		20BDBB8727622EF1001D7822 /* VerificationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerificationViewModel.swift; sourceTree = "<group>"; };
 		3F819AB5AED9B6C0A2F30BAA /* Pods-CoffeeGO.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CoffeeGO.debug.xcconfig"; path = "Target Support Files/Pods-CoffeeGO/Pods-CoffeeGO.debug.xcconfig"; sourceTree = "<group>"; };
 		6E16732A284D63AD0D97C614 /* Pods-CoffeeGO.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CoffeeGO.release.xcconfig"; path = "Target Support Files/Pods-CoffeeGO/Pods-CoffeeGO.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -102,6 +106,7 @@
 				201BFBB6276100AC0058C974 /* AppDelegate.swift */,
 				201BFBB8276100AC0058C974 /* SceneDelegate.swift */,
 				20BDBB702761137C001D7822 /* Extensions.swift */,
+				20BDBB8527622DF7001D7822 /* K.swift */,
 				20BDBB6D27610BE1001D7822 /* Managers */,
 				20BDBB682761067C001D7822 /* Model */,
 				20BDBB6A27610696001D7822 /* View */,
@@ -125,6 +130,7 @@
 			children = (
 				20BDBB6E27611079001D7822 /* LoginViewModel.swift */,
 				20BDBB7F27613546001D7822 /* RegisterViewModel.swift */,
+				20BDBB8727622EF1001D7822 /* VerificationViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -321,10 +327,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				201BFBBB276100AC0058C974 /* LoginViewController.swift in Sources */,
+				20BDBB8627622DF7001D7822 /* K.swift in Sources */,
 				20BDBB712761137C001D7822 /* Extensions.swift in Sources */,
 				20BDBB8027613546001D7822 /* RegisterViewModel.swift in Sources */,
 				20BDBB82276138AF001D7822 /* RegisterViewController.swift in Sources */,
 				201BFBB7276100AC0058C974 /* AppDelegate.swift in Sources */,
+				20BDBB8827622EF1001D7822 /* VerificationViewModel.swift in Sources */,
 				20BDBB6C27610864001D7822 /* FirebaseAuthManager.swift in Sources */,
 				20BDBB842761475A001D7822 /* VerificationViewController.swift in Sources */,
 				20BDBB6F27611079001D7822 /* LoginViewModel.swift in Sources */,

@@ -27,6 +27,11 @@ extension String {
         print("self.count >= 6: \(self.count >= 6)")
         return self.count >= 6
     }
+    func isValidPhoneNumber() -> Bool {
+        let phNumberReg = "^\\s*(?:\\+?(\\d{1,3}))?[-. (]*(\\d{3})[-. )]*(\\d{3})[-. ]*(\\d{4})(?: *x(\\d+))?\\s*$"
+        let phNTest = NSPredicate(format: "SELF MATCHES %@", phNumberReg)
+        return phNTest.evaluate(with: self)
+    }
 }
 
 extension UIViewController {

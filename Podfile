@@ -10,4 +10,6 @@ pod 'Firebase/Auth'
 pod 'Firebase/Firestore'
 pod 'RxSwift', '6.2.0'
 pod 'RxCocoa', '6.2.0'
+pod 'IQKeyboardManagerSwift'
+
 end

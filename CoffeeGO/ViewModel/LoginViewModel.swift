@@ -29,6 +29,10 @@ class LoginViewModel {
             completion(error)
         }
     }
-    
+    func getRole(_ completion: @escaping (String) -> ()) {
+        firebaseAuth.getRole { role in
+            completion(role) 
+        }
+    }
 }
 
