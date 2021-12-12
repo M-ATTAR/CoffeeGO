@@ -27,6 +27,9 @@ class FirebaseAuthManager {
     func signOut(completion: @escaping (Error?) -> () ) {
         do {
             try firebaseAuth.signOut()
+            UserDefaults.standard.removeObject(forKey: "role")
+            UserDefaults.standard.removeObject(forKey: "userID")
+            
             completion(nil)
         } catch let signOutError as NSError {
             print("Error signing out: %@", signOutError)
@@ -84,14 +87,29 @@ class FirebaseAuthManager {
             }
         }
     }
-    func getRole(_ completion: @escaping (String) -> ()) {
-        
-        db.collection("users").document(currentUser).getDocument { document, error in
-            if let document = document, document.exists {
-                completion(document.get("role") as! String)
-            } else {
-                print("Document does not exist")
+    func getRole(uid: String) -> Observable<Roles> { // Should this be in FirebaseDBManager?
+        return Observable.create { observer in
+            self.db.collection("users").document(uid).getDocument { document, error in
+                if let error = error {
+                    observer.onError(error)
+                }
+                if let document = document, document.exists {
+                    switch (document.get("role") as! String){
+                    case "admin":
+                        observer.onNext(.admin)
+                    case "user":
+                        observer.onNext(.user)
+                    case "car":
+                        observer.onNext(.carOwner)
+                    default:
+                        observer.onNext(.user)
+                    }
+                    observer.onCompleted()
+                } else {
+                    print("Document does not exist")
+                }
             }
+            return Disposables.create()
         }
     }
 }

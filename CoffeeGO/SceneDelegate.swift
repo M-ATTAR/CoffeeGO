@@ -11,7 +11,8 @@ import FirebaseAuth
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
     var window: UIWindow?
-
+    let firebaseAuth = FirebaseAuthManager()
+    let defaults = UserDefaults.standard
 
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
         // Use this method to optionally configure and attach the UIWindow `window` to the provided UIWindowScene `scene`.
@@ -22,20 +23,23 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         window = UIWindow(frame: windowScene.coordinateSpace.bounds)
         window?.windowScene = windowScene
         
-        if Auth.auth().currentUser == nil {
-            window?.rootViewController = UIStoryboard(name: "Main", bundle: .main).instantiateViewController(withIdentifier: K.rootNC) as! UINavigationController
+        if let _ = Auth.auth().currentUser {
+            if defaults.string(forKey: "role") == "admin" {
+                window?.rootViewController = UIStoryboard(name: K.dashboardStoryboard, bundle: nil).instantiateViewController(withIdentifier: K.dashboardTabBarID) as! UITabBarController
+            }
         } else {
-            window?.rootViewController = UIStoryboard(name: "Main", bundle: .main).instantiateViewController(withIdentifier: K.verificationVCID) as! VerificationViewController
+            window?.rootViewController = UIStoryboard(name: K.mainStoryboard, bundle: .main).instantiateViewController(withIdentifier: K.rootNC) as! UINavigationController
         }
+        
+//        if Auth.auth().currentUser == nil {
+//            
+//        } else {
+//        
+//            window?.rootViewController = UIStoryboard(name: "Main", bundle: .main).instantiateViewController(withIdentifier: K.verificationVCID) as! VerificationViewController
+//        }
         
         
         window?.makeKeyAndVisible()
-    }
-    
-    func createAuthNC() -> UINavigationController {
-        let authVC = UIStoryboard(name: "Main", bundle: .main).instantiateViewController(withIdentifier: K.loginVCID) as! LoginViewController
-
-        return UINavigationController(rootViewController: authVC)
     }
     
     func setRootViewController(_ vc: UIViewController) {

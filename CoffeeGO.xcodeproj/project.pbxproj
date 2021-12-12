@@ -20,9 +20,11 @@
 		20BDBB7927613404001D7822 /* CoffeeGOTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20BDBB7827613404001D7822 /* CoffeeGOTests.swift */; };
 		20BDBB8027613546001D7822 /* RegisterViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20BDBB7F27613546001D7822 /* RegisterViewModel.swift */; };
 		20BDBB82276138AF001D7822 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20BDBB81276138AF001D7822 /* RegisterViewController.swift */; };
-		20BDBB842761475A001D7822 /* VerificationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20BDBB832761475A001D7822 /* VerificationViewController.swift */; };
 		20BDBB8627622DF7001D7822 /* K.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20BDBB8527622DF7001D7822 /* K.swift */; };
-		20BDBB8827622EF1001D7822 /* VerificationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20BDBB8727622EF1001D7822 /* VerificationViewModel.swift */; };
+		20F87CDB27649F060049FF35 /* CGTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20F87CDA27649F060049FF35 /* CGTextField.swift */; };
+		20F87CDD2764A6180049FF35 /* Dashboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 20F87CDC2764A6180049FF35 /* Dashboard.storyboard */; };
+		20F87CE22764A7A10049FF35 /* DashboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20F87CE12764A7A10049FF35 /* DashboardViewController.swift */; };
+		20F87CE42764E0840049FF35 /* CGButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20F87CE32764E0840049FF35 /* CGButton.swift */; };
 		22C62992BE20EC61D546CD13 /* Pods_CoffeeGO.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 18ED16EC2F85A86301FB8D40 /* Pods_CoffeeGO.framework */; };
 /* End PBXBuildFile section */
 
@@ -54,9 +56,11 @@
 		20BDBB7827613404001D7822 /* CoffeeGOTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoffeeGOTests.swift; sourceTree = "<group>"; };
 		20BDBB7F27613546001D7822 /* RegisterViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewModel.swift; sourceTree = "<group>"; };
 		20BDBB81276138AF001D7822 /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
-		20BDBB832761475A001D7822 /* VerificationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerificationViewController.swift; sourceTree = "<group>"; };
 		20BDBB8527622DF7001D7822 /* K.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = K.swift; sourceTree = "<group>"; };
-		20BDBB8727622EF1001D7822 /* VerificationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerificationViewModel.swift; sourceTree = "<group>"; };
+		20F87CDA27649F060049FF35 /* CGTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CGTextField.swift; sourceTree = "<group>"; };
+		20F87CDC2764A6180049FF35 /* Dashboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Dashboard.storyboard; sourceTree = "<group>"; };
+		20F87CE12764A7A10049FF35 /* DashboardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardViewController.swift; sourceTree = "<group>"; };
+		20F87CE32764E0840049FF35 /* CGButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CGButton.swift; sourceTree = "<group>"; };
 		3F819AB5AED9B6C0A2F30BAA /* Pods-CoffeeGO.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CoffeeGO.debug.xcconfig"; path = "Target Support Files/Pods-CoffeeGO/Pods-CoffeeGO.debug.xcconfig"; sourceTree = "<group>"; };
 		6E16732A284D63AD0D97C614 /* Pods-CoffeeGO.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CoffeeGO.release.xcconfig"; path = "Target Support Files/Pods-CoffeeGO/Pods-CoffeeGO.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -130,7 +134,6 @@
 			children = (
 				20BDBB6E27611079001D7822 /* LoginViewModel.swift */,
 				20BDBB7F27613546001D7822 /* RegisterViewModel.swift */,
-				20BDBB8727622EF1001D7822 /* VerificationViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -138,11 +141,10 @@
 		20BDBB6A27610696001D7822 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				201BFBBA276100AC0058C974 /* LoginViewController.swift */,
-				20BDBB81276138AF001D7822 /* RegisterViewController.swift */,
-				20BDBB832761475A001D7822 /* VerificationViewController.swift */,
-				201BFBBC276100AC0058C974 /* Main.storyboard */,
 				201BFBC1276100B00058C974 /* LaunchScreen.storyboard */,
+				20F87CDF2764A71D0049FF35 /* Custom Views */,
+				20F87CDE2764A64E0049FF35 /* Authentication VCs */,
+				20F87CE02764A7370049FF35 /* Dashboard VCs */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -161,6 +163,34 @@
 				20BDBB7827613404001D7822 /* CoffeeGOTests.swift */,
 			);
 			path = CoffeeGOTests;
+			sourceTree = "<group>";
+		};
+		20F87CDE2764A64E0049FF35 /* Authentication VCs */ = {
+			isa = PBXGroup;
+			children = (
+				201BFBBC276100AC0058C974 /* Main.storyboard */,
+				201BFBBA276100AC0058C974 /* LoginViewController.swift */,
+				20BDBB81276138AF001D7822 /* RegisterViewController.swift */,
+			);
+			path = "Authentication VCs";
+			sourceTree = "<group>";
+		};
+		20F87CDF2764A71D0049FF35 /* Custom Views */ = {
+			isa = PBXGroup;
+			children = (
+				20F87CDA27649F060049FF35 /* CGTextField.swift */,
+				20F87CE32764E0840049FF35 /* CGButton.swift */,
+			);
+			path = "Custom Views";
+			sourceTree = "<group>";
+		};
+		20F87CE02764A7370049FF35 /* Dashboard VCs */ = {
+			isa = PBXGroup;
+			children = (
+				20F87CDC2764A6180049FF35 /* Dashboard.storyboard */,
+				20F87CE12764A7A10049FF35 /* DashboardViewController.swift */,
+			);
+			path = "Dashboard VCs";
 			sourceTree = "<group>";
 		};
 		87D31BC6E1632AEF5869261A /* Pods */ = {
@@ -264,6 +294,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				201BFBC3276100B00058C974 /* LaunchScreen.storyboard in Resources */,
+				20F87CDD2764A6180049FF35 /* Dashboard.storyboard in Resources */,
 				201BFBCB2761018C0058C974 /* GoogleService-Info.plist in Resources */,
 				201BFBC0276100B00058C974 /* Assets.xcassets in Resources */,
 				201BFBBE276100AC0058C974 /* Main.storyboard in Resources */,
@@ -332,11 +363,12 @@
 				20BDBB8027613546001D7822 /* RegisterViewModel.swift in Sources */,
 				20BDBB82276138AF001D7822 /* RegisterViewController.swift in Sources */,
 				201BFBB7276100AC0058C974 /* AppDelegate.swift in Sources */,
-				20BDBB8827622EF1001D7822 /* VerificationViewModel.swift in Sources */,
 				20BDBB6C27610864001D7822 /* FirebaseAuthManager.swift in Sources */,
-				20BDBB842761475A001D7822 /* VerificationViewController.swift in Sources */,
+				20F87CE42764E0840049FF35 /* CGButton.swift in Sources */,
 				20BDBB6F27611079001D7822 /* LoginViewModel.swift in Sources */,
 				201BFBB9276100AC0058C974 /* SceneDelegate.swift in Sources */,
+				20F87CDB27649F060049FF35 /* CGTextField.swift in Sources */,
+				20F87CE22764A7A10049FF35 /* DashboardViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

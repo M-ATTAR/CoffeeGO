@@ -28,31 +28,11 @@ class RegisterViewController: UIViewController {
         super.viewDidLoad()
         title = K.createAccountTitle
         self.hideKeyboardWhenTappedAround()
-        
-        firstNameTF.clipsToBounds = true
-        firstNameTF.layer.cornerRadius = 10
-        firstNameTF.backgroundColor = .systemBrown.withAlphaComponent(0.3)
-        
-        lastNameTF.clipsToBounds = true
-        lastNameTF.layer.cornerRadius = 10
-        lastNameTF.backgroundColor = .systemBrown.withAlphaComponent(0.3)
-        
-        phoneNumberTF.clipsToBounds = true
-        phoneNumberTF.layer.cornerRadius = 10
-        phoneNumberTF.backgroundColor = .systemBrown.withAlphaComponent(0.3)
-        
-        email.clipsToBounds = true
-        email.layer.cornerRadius = 10
-        email.backgroundColor = .systemBrown.withAlphaComponent(0.3)
-        
-        password.clipsToBounds = true
-        password.layer.cornerRadius = 10
-        password.backgroundColor = .systemBrown.withAlphaComponent(0.3)
-        
-        confirmPassword.clipsToBounds = true
-        confirmPassword.layer.cornerRadius = 10
-        confirmPassword.backgroundColor = .systemBrown.withAlphaComponent(0.3)
-        
+
+        bindUI()
+    }
+    
+    func bindUI() {
         firstNameTF.rx.text.orEmpty.bind(to: viewModel.firstName).disposed(by: disposeBag)
         lastNameTF.rx.text.orEmpty.bind(to: viewModel.lastName).disposed(by: disposeBag)
         phoneNumberTF.rx.text.orEmpty.bind(to: viewModel.phoneNumber).disposed(by: disposeBag)
@@ -65,13 +45,13 @@ class RegisterViewController: UIViewController {
         viewModel.isValid.map { $0 }.bind(to: register.rx.isEnabled).disposed(by: disposeBag)
     }
     
-    @IBAction func registerTapped(_ sender: UIButton) {
+    @IBAction func registerTapped(_ sender: UIButton) { // TODO: Change to RX AND ADD ROUTING
         viewModel.register(email: email.text!, password: password.text!, firstName: firstNameTF.text!, lastName: lastNameTF.text!) { error in
             if let error = error {
                 print(error.localizedDescription)
             } else {
-                let vc = UIStoryboard(name: "Main", bundle: .main).instantiateViewController(withIdentifier: K.verificationVCID) as! VerificationViewController
-                (UIApplication.shared.connectedScenes.first?.delegate as? SceneDelegate)?.setRootViewController(vc)
+//                let vc = UIStoryboard(name: K.mainStoryboard, bundle: .main).instantiateViewController(withIdentifier: K.verificationVCID) as! VerificationViewController
+//                (UIApplication.shared.connectedScenes.first?.delegate as? SceneDelegate)?.setRootViewController(vc)
             }
         }
     }

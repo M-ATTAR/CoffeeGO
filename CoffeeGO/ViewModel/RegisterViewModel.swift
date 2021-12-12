@@ -13,17 +13,17 @@ class RegisterViewModel {
     
     let firebaseAuth = FirebaseAuthManager()
     
-    let firstName = BehaviorRelay<String>(value: "")
-    let lastName = BehaviorRelay<String>(value: "")
+    let firstName   = BehaviorRelay<String>(value: "")
+    let lastName    = BehaviorRelay<String>(value: "")
     let phoneNumber = BehaviorRelay<String>(value: "")
-    let email    = BehaviorRelay<String>(value: "")
-    let password = BehaviorRelay<String>(value: "")
+    let email       = BehaviorRelay<String>(value: "")
+    let password    = BehaviorRelay<String>(value: "")
     
     let confirmPassword = BehaviorRelay<String>(value: "")
     
     let isValidCred: Observable<Bool>
     let isValidInfo: Observable<Bool>
-    let isValid: Observable<Bool>
+    let isValid:     Observable<Bool>
     
     init() {
         isValidCred = Observable.combineLatest( self.email.asObservable(), self.password.asObservable(), self.confirmPassword.asObservable()) { (email, password, confirmPassword) in
@@ -35,9 +35,6 @@ class RegisterViewModel {
         isValid = Observable.combineLatest( self.isValidCred.asObservable(), self.isValidInfo.asObservable()) { (cred, info) in
             return cred && info
         }
-//        isValid = Observable.combineLatest( self.email.asObservable(), self.password.asObservable(), self.confirmPassword.asObservable()) { (email, password, confirmPassword) in
-//            return email.isValidEmail() && password.isValidPassword() && (password == confirmPassword)
-//        }
     }
     
     func register(email: String, password: String, firstName: String, lastName: String, completion: @escaping (Error?) -> ()) {
