@@ -40,7 +40,7 @@ class RegisterViewModel {
     func register(email: String, password: String, firstName: String, lastName: String, completion: @escaping (Error?) -> ()) {
         firebaseAuth.signUp(email: email, password: password) { _, error in
             if error == nil {
-                self.verify()
+//                self.verify()
                 self.firebaseAuth.setDisplayName(firstName: firstName, lastName: lastName) { error in
                     completion(error)
                 }
@@ -49,9 +49,9 @@ class RegisterViewModel {
         }
     }
     
-    func verify() {
-        firebaseAuth.verifyUser { error in
-            print(error?.localizedDescription ?? "whatever")
-        }
-    }
+//    func verify() {
+//        firebaseAuth.verifyUser { error in
+//            print(error?.localizedDescription ?? "whatever")
+//        }
+//    }
 }

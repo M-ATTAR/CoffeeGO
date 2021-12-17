@@ -11,7 +11,7 @@ import UIKit
     
     @IBInspectable var attPlaceholder: String = "Placeholder" {
         didSet {
-            attributedPlaceholder = NSAttributedString(string: attPlaceholder, attributes: [ NSAttributedString.Key.foregroundColor: UIColor.white.withAlphaComponent(0.5) ])
+            attributedPlaceholder = NSAttributedString(string: attPlaceholder, attributes: [ NSAttributedString.Key.foregroundColor: UIColor.white.withAlphaComponent(0.6) ])
         }
     }
     
@@ -27,14 +27,27 @@ import UIKit
     }
     
     private func configure() {
-        layer.cornerRadius = 10
-        clipsToBounds = true
-        backgroundColor = K.darkBrown
+        layer.cornerRadius  = 10
+        clipsToBounds       = true
+        
+        backgroundColor  = .systemBrown.withAlphaComponent(0.5)
+        tintColor        = .white
+        textColor        = .white
+        
+        borderStyle     = .none
+        clearButtonMode = .whileEditing
+        
         font = UIFont.systemFont(ofSize: 16)
-        tintColor = .systemBrown
-        textColor = .white
         
         addPaddingBeforeText()
+    }
+    
+    func addPaddingBeforeText() {
+        self.leftViewMode = .always
+        self.layer.masksToBounds = true
+        let paddingView = UIView(frame: CGRect(x: 0, y: 0, width: 15, height: self.frame.height))
+        self.leftView = paddingView
+        self.rightViewMode = .always
     }
     
 }

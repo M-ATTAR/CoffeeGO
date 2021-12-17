@@ -14,7 +14,7 @@ class LoginViewModel {
     private let firebaseAuth = FirebaseAuthManager()
     private let disposeBag = DisposeBag()
     
-    // For Validation
+    // TODO: For Validation - In View Controller
     let email    = BehaviorRelay<String>(value: "")
     let password = BehaviorRelay<String>(value: "")
     
@@ -55,24 +55,48 @@ class LoginViewModel {
         }
     }
     
+//    func signInTraits(email: String, password: String) -> Single<Roles> {
+//        return Single.create { single in
+//            let disposable = Disposables.create()
+//
+//            self.firebaseAuth.signIn(email: email, password: password) { authResult, error in
+//                if let error = error {
+//                    single(.failure(error))
+//                } else {
+//                    self.getRole(uid: authResult!.user.uid) { role in
+//                        UserDefaults.standard.set(role.rawValue, forKey: "role")
+//                        UserDefaults.standard.set(authResult!.user.uid, forKey: "userID")
+//
+//                        // To be able to create accounts and re-sign in.
+//                        UserDefaults.standard.set(email, forKey: "email")
+//                        UserDefaults.standard.set(password, forKey: "password")
+//
+//                        single(.success(role))
+//                    }
+//                }
+//            }
+//
+//            return disposable
+//        }
+//    }
+    
     func signInTraits(email: String, password: String) -> Single<Roles> {
         return Single.create { single in
-            let disposable = Disposables.create()
             
-            self.firebaseAuth.signIn(email: email, password: password) { authResult, error in
-                if let error = error {
-                    single(.failure(error))
-                } else {
-                    self.getRole(uid: authResult!.user.uid) { role in
-                        UserDefaults.standard.set(role.rawValue, forKey: "role")
-                        UserDefaults.standard.set(authResult!.user.uid, forKey: "userID")
-                        single(.success(role))
-                    }
+            self.firebaseAuth.signInRX(email: email, password: password).subscribe { result in
+                self.getRole(uid: result.user.uid) { role in
+                    UserDefaults.standard.set(role.rawValue, forKey: "role")
+                    UserDefaults.standard.set(result.user.uid, forKey: "userID")
+                    
+                    single(.success(role))
                 }
-            }
-            
-            return disposable
+            } onError: { error in
+                single(.failure(error))
+            }.disposed(by: self.disposeBag)
+
+            return Disposables.create()
         }
     }
+    
 }
 

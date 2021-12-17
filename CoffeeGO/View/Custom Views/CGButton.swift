@@ -19,16 +19,16 @@ import UIKit
     }
     
     private func configure() {
-        backgroundColor = K.lightBrown
+        backgroundColor = Colors.foregroundC!
         layer.cornerRadius = 10
-        setTitleColor(K.darkBrown , for: .normal)
+        setTitleColor(Colors.backgroundC!, for: .normal)
     }
     
     override var isEnabled: Bool {
         didSet {
-            backgroundColor = isEnabled ? K.lightBrown : K.lightGrey
-            setTitleColor(K.darkBrown, for: .normal)
-            setTitleColor(K.darkGrey, for: .disabled)
+            backgroundColor = isEnabled ? Colors.foregroundC! : Colors.lightGrey
+            setTitleColor(Colors.backgroundC!, for: .normal)
+            setTitleColor(Colors.darkGrey, for: .disabled)
         }
     }
 }

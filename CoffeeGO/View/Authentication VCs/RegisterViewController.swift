@@ -26,7 +26,7 @@ class RegisterViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        title = K.createAccountTitle
+        title = Constants.createAccountTitle
         self.hideKeyboardWhenTappedAround()
 
         bindUI()

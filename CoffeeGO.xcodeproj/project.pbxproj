@@ -7,6 +7,17 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		20089E52276A3D2400EDA42B /* CarOwner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20089E51276A3D2400EDA42B /* CarOwner.swift */; };
+		20089E55276B32EA00EDA42B /* CarsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20089E53276B32E900EDA42B /* CarsCell.swift */; };
+		20089E56276B32EA00EDA42B /* CarsCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 20089E54276B32E900EDA42B /* CarsCell.xib */; };
+		20089E58276B4D4100EDA42B /* DashboardViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20089E57276B4D4100EDA42B /* DashboardViewModel.swift */; };
+		20089E5A276B7DA100EDA42B /* CarDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20089E59276B7DA100EDA42B /* CarDetailsViewController.swift */; };
+		20089E5C276B95CD00EDA42B /* Order.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20089E5B276B95CD00EDA42B /* Order.swift */; };
+		20089E5F276CD95200EDA42B /* OrdersCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20089E5D276CD95200EDA42B /* OrdersCell.swift */; };
+		20089E60276CD95200EDA42B /* OrdersCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 20089E5E276CD95200EDA42B /* OrdersCell.xib */; };
+		20089E63276CFA2200EDA42B /* CarsCell2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20089E61276CFA2200EDA42B /* CarsCell2.swift */; };
+		20089E64276CFA2200EDA42B /* CarsCell2.xib in Resources */ = {isa = PBXBuildFile; fileRef = 20089E62276CFA2200EDA42B /* CarsCell2.xib */; };
+		20089E66276D110300EDA42B /* OrdersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20089E65276D110300EDA42B /* OrdersViewController.swift */; };
 		201BFBB7276100AC0058C974 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 201BFBB6276100AC0058C974 /* AppDelegate.swift */; };
 		201BFBB9276100AC0058C974 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 201BFBB8276100AC0058C974 /* SceneDelegate.swift */; };
 		201BFBBB276100AC0058C974 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 201BFBBA276100AC0058C974 /* LoginViewController.swift */; };
@@ -14,17 +25,25 @@
 		201BFBC0276100B00058C974 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 201BFBBF276100B00058C974 /* Assets.xcassets */; };
 		201BFBC3276100B00058C974 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 201BFBC1276100B00058C974 /* LaunchScreen.storyboard */; };
 		201BFBCB2761018C0058C974 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 201BFBCA2761018C0058C974 /* GoogleService-Info.plist */; };
+		206F274A2766110A000F51A7 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 206F274C2766110A000F51A7 /* Localizable.strings */; };
+		206F274F27665BF6000F51A7 /* Admin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 206F274E27665BF6000F51A7 /* Admin.swift */; };
+		206F275127665D80000F51A7 /* AdminsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 206F275027665D80000F51A7 /* AdminsViewController.swift */; };
+		206F275327665DF5000F51A7 /* AdminsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 206F275227665DF5000F51A7 /* AdminsViewModel.swift */; };
+		206F275527666264000F51A7 /* FirebaseDBManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 206F275427666264000F51A7 /* FirebaseDBManager.swift */; };
 		20BDBB6C27610864001D7822 /* FirebaseAuthManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20BDBB6B27610864001D7822 /* FirebaseAuthManager.swift */; };
 		20BDBB6F27611079001D7822 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20BDBB6E27611079001D7822 /* LoginViewModel.swift */; };
-		20BDBB712761137C001D7822 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20BDBB702761137C001D7822 /* Extensions.swift */; };
 		20BDBB7927613404001D7822 /* CoffeeGOTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20BDBB7827613404001D7822 /* CoffeeGOTests.swift */; };
 		20BDBB8027613546001D7822 /* RegisterViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20BDBB7F27613546001D7822 /* RegisterViewModel.swift */; };
 		20BDBB82276138AF001D7822 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20BDBB81276138AF001D7822 /* RegisterViewController.swift */; };
-		20BDBB8627622DF7001D7822 /* K.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20BDBB8527622DF7001D7822 /* K.swift */; };
+		20BDBB8627622DF7001D7822 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20BDBB8527622DF7001D7822 /* Constants.swift */; };
 		20F87CDB27649F060049FF35 /* CGTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20F87CDA27649F060049FF35 /* CGTextField.swift */; };
 		20F87CDD2764A6180049FF35 /* Dashboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 20F87CDC2764A6180049FF35 /* Dashboard.storyboard */; };
 		20F87CE22764A7A10049FF35 /* DashboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20F87CE12764A7A10049FF35 /* DashboardViewController.swift */; };
 		20F87CE42764E0840049FF35 /* CGButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20F87CE32764E0840049FF35 /* CGButton.swift */; };
+		20FA615E2767ADD800E5E740 /* AdminSettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20FA615D2767ADD800E5E740 /* AdminSettingsViewController.swift */; };
+		20FA61602768AE1000E5E740 /* AddAdminViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20FA615F2768AE1000E5E740 /* AddAdminViewController.swift */; };
+		20FA61632769E88700E5E740 /* String+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20FA61622769E88700E5E740 /* String+Ext.swift */; };
+		20FA61652769E89D00E5E740 /* ViewController+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20FA61642769E89C00E5E740 /* ViewController+Ext.swift */; };
 		22C62992BE20EC61D546CD13 /* Pods_CoffeeGO.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 18ED16EC2F85A86301FB8D40 /* Pods_CoffeeGO.framework */; };
 /* End PBXBuildFile section */
 
@@ -40,6 +59,17 @@
 
 /* Begin PBXFileReference section */
 		18ED16EC2F85A86301FB8D40 /* Pods_CoffeeGO.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CoffeeGO.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		20089E51276A3D2400EDA42B /* CarOwner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarOwner.swift; sourceTree = "<group>"; };
+		20089E53276B32E900EDA42B /* CarsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarsCell.swift; sourceTree = "<group>"; };
+		20089E54276B32E900EDA42B /* CarsCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CarsCell.xib; sourceTree = "<group>"; };
+		20089E57276B4D4100EDA42B /* DashboardViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardViewModel.swift; sourceTree = "<group>"; };
+		20089E59276B7DA100EDA42B /* CarDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarDetailsViewController.swift; sourceTree = "<group>"; };
+		20089E5B276B95CD00EDA42B /* Order.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Order.swift; sourceTree = "<group>"; };
+		20089E5D276CD95200EDA42B /* OrdersCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrdersCell.swift; sourceTree = "<group>"; };
+		20089E5E276CD95200EDA42B /* OrdersCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OrdersCell.xib; sourceTree = "<group>"; };
+		20089E61276CFA2200EDA42B /* CarsCell2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarsCell2.swift; sourceTree = "<group>"; };
+		20089E62276CFA2200EDA42B /* CarsCell2.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CarsCell2.xib; sourceTree = "<group>"; };
+		20089E65276D110300EDA42B /* OrdersViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrdersViewController.swift; sourceTree = "<group>"; };
 		201BFBB3276100AC0058C974 /* CoffeeGO.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CoffeeGO.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		201BFBB6276100AC0058C974 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		201BFBB8276100AC0058C974 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -49,18 +79,28 @@
 		201BFBC2276100B00058C974 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		201BFBC4276100B00058C974 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		201BFBCA2761018C0058C974 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		206F2747276610E9000F51A7 /* ar */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ar; path = ar.lproj/Main.strings; sourceTree = "<group>"; };
+		206F274B2766110A000F51A7 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		206F274D2766110D000F51A7 /* ar */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ar; path = ar.lproj/Localizable.strings; sourceTree = "<group>"; };
+		206F274E27665BF6000F51A7 /* Admin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Admin.swift; sourceTree = "<group>"; };
+		206F275027665D80000F51A7 /* AdminsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdminsViewController.swift; sourceTree = "<group>"; };
+		206F275227665DF5000F51A7 /* AdminsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdminsViewModel.swift; sourceTree = "<group>"; };
+		206F275427666264000F51A7 /* FirebaseDBManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseDBManager.swift; sourceTree = "<group>"; };
 		20BDBB6B27610864001D7822 /* FirebaseAuthManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseAuthManager.swift; sourceTree = "<group>"; };
 		20BDBB6E27611079001D7822 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
-		20BDBB702761137C001D7822 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		20BDBB7627613404001D7822 /* CoffeeGOTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CoffeeGOTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		20BDBB7827613404001D7822 /* CoffeeGOTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoffeeGOTests.swift; sourceTree = "<group>"; };
 		20BDBB7F27613546001D7822 /* RegisterViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewModel.swift; sourceTree = "<group>"; };
 		20BDBB81276138AF001D7822 /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
-		20BDBB8527622DF7001D7822 /* K.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = K.swift; sourceTree = "<group>"; };
+		20BDBB8527622DF7001D7822 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		20F87CDA27649F060049FF35 /* CGTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CGTextField.swift; sourceTree = "<group>"; };
 		20F87CDC2764A6180049FF35 /* Dashboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Dashboard.storyboard; sourceTree = "<group>"; };
 		20F87CE12764A7A10049FF35 /* DashboardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardViewController.swift; sourceTree = "<group>"; };
 		20F87CE32764E0840049FF35 /* CGButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CGButton.swift; sourceTree = "<group>"; };
+		20FA615D2767ADD800E5E740 /* AdminSettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdminSettingsViewController.swift; sourceTree = "<group>"; };
+		20FA615F2768AE1000E5E740 /* AddAdminViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddAdminViewController.swift; sourceTree = "<group>"; };
+		20FA61622769E88700E5E740 /* String+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Ext.swift"; sourceTree = "<group>"; };
+		20FA61642769E89C00E5E740 /* ViewController+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ViewController+Ext.swift"; sourceTree = "<group>"; };
 		3F819AB5AED9B6C0A2F30BAA /* Pods-CoffeeGO.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CoffeeGO.debug.xcconfig"; path = "Target Support Files/Pods-CoffeeGO/Pods-CoffeeGO.debug.xcconfig"; sourceTree = "<group>"; };
 		6E16732A284D63AD0D97C614 /* Pods-CoffeeGO.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CoffeeGO.release.xcconfig"; path = "Target Support Files/Pods-CoffeeGO/Pods-CoffeeGO.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -109,8 +149,8 @@
 			children = (
 				201BFBB6276100AC0058C974 /* AppDelegate.swift */,
 				201BFBB8276100AC0058C974 /* SceneDelegate.swift */,
-				20BDBB702761137C001D7822 /* Extensions.swift */,
-				20BDBB8527622DF7001D7822 /* K.swift */,
+				20BDBB8527622DF7001D7822 /* Constants.swift */,
+				20FA61612769E86F00E5E740 /* Extensions */,
 				20BDBB6D27610BE1001D7822 /* Managers */,
 				20BDBB682761067C001D7822 /* Model */,
 				20BDBB6A27610696001D7822 /* View */,
@@ -118,6 +158,7 @@
 				201BFBBF276100B00058C974 /* Assets.xcassets */,
 				201BFBC4276100B00058C974 /* Info.plist */,
 				201BFBCA2761018C0058C974 /* GoogleService-Info.plist */,
+				206F274C2766110A000F51A7 /* Localizable.strings */,
 			);
 			path = CoffeeGO;
 			sourceTree = "<group>";
@@ -125,6 +166,9 @@
 		20BDBB682761067C001D7822 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				206F274E27665BF6000F51A7 /* Admin.swift */,
+				20089E51276A3D2400EDA42B /* CarOwner.swift */,
+				20089E5B276B95CD00EDA42B /* Order.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -134,6 +178,8 @@
 			children = (
 				20BDBB6E27611079001D7822 /* LoginViewModel.swift */,
 				20BDBB7F27613546001D7822 /* RegisterViewModel.swift */,
+				206F275227665DF5000F51A7 /* AdminsViewModel.swift */,
+				20089E57276B4D4100EDA42B /* DashboardViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -153,6 +199,7 @@
 			isa = PBXGroup;
 			children = (
 				20BDBB6B27610864001D7822 /* FirebaseAuthManager.swift */,
+				206F275427666264000F51A7 /* FirebaseDBManager.swift */,
 			);
 			path = Managers;
 			sourceTree = "<group>";
@@ -180,6 +227,12 @@
 			children = (
 				20F87CDA27649F060049FF35 /* CGTextField.swift */,
 				20F87CE32764E0840049FF35 /* CGButton.swift */,
+				20089E53276B32E900EDA42B /* CarsCell.swift */,
+				20089E54276B32E900EDA42B /* CarsCell.xib */,
+				20089E5D276CD95200EDA42B /* OrdersCell.swift */,
+				20089E5E276CD95200EDA42B /* OrdersCell.xib */,
+				20089E61276CFA2200EDA42B /* CarsCell2.swift */,
+				20089E62276CFA2200EDA42B /* CarsCell2.xib */,
 			);
 			path = "Custom Views";
 			sourceTree = "<group>";
@@ -189,8 +242,22 @@
 			children = (
 				20F87CDC2764A6180049FF35 /* Dashboard.storyboard */,
 				20F87CE12764A7A10049FF35 /* DashboardViewController.swift */,
+				20089E59276B7DA100EDA42B /* CarDetailsViewController.swift */,
+				20089E65276D110300EDA42B /* OrdersViewController.swift */,
+				206F275027665D80000F51A7 /* AdminsViewController.swift */,
+				20FA615D2767ADD800E5E740 /* AdminSettingsViewController.swift */,
+				20FA615F2768AE1000E5E740 /* AddAdminViewController.swift */,
 			);
 			path = "Dashboard VCs";
+			sourceTree = "<group>";
+		};
+		20FA61612769E86F00E5E740 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				20FA61622769E88700E5E740 /* String+Ext.swift */,
+				20FA61642769E89C00E5E740 /* ViewController+Ext.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 		87D31BC6E1632AEF5869261A /* Pods */ = {
@@ -276,6 +343,7 @@
 			knownRegions = (
 				en,
 				Base,
+				ar,
 			);
 			mainGroup = 201BFBAA276100AC0058C974;
 			productRefGroup = 201BFBB4276100AC0058C974 /* Products */;
@@ -294,9 +362,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				201BFBC3276100B00058C974 /* LaunchScreen.storyboard in Resources */,
+				20089E64276CFA2200EDA42B /* CarsCell2.xib in Resources */,
+				206F274A2766110A000F51A7 /* Localizable.strings in Resources */,
+				20089E56276B32EA00EDA42B /* CarsCell.xib in Resources */,
 				20F87CDD2764A6180049FF35 /* Dashboard.storyboard in Resources */,
 				201BFBCB2761018C0058C974 /* GoogleService-Info.plist in Resources */,
 				201BFBC0276100B00058C974 /* Assets.xcassets in Resources */,
+				20089E60276CD95200EDA42B /* OrdersCell.xib in Resources */,
 				201BFBBE276100AC0058C974 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -357,17 +429,32 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				206F275327665DF5000F51A7 /* AdminsViewModel.swift in Sources */,
 				201BFBBB276100AC0058C974 /* LoginViewController.swift in Sources */,
-				20BDBB8627622DF7001D7822 /* K.swift in Sources */,
-				20BDBB712761137C001D7822 /* Extensions.swift in Sources */,
+				20089E55276B32EA00EDA42B /* CarsCell.swift in Sources */,
+				20BDBB8627622DF7001D7822 /* Constants.swift in Sources */,
+				206F275127665D80000F51A7 /* AdminsViewController.swift in Sources */,
+				206F275527666264000F51A7 /* FirebaseDBManager.swift in Sources */,
 				20BDBB8027613546001D7822 /* RegisterViewModel.swift in Sources */,
+				20FA615E2767ADD800E5E740 /* AdminSettingsViewController.swift in Sources */,
 				20BDBB82276138AF001D7822 /* RegisterViewController.swift in Sources */,
 				201BFBB7276100AC0058C974 /* AppDelegate.swift in Sources */,
+				206F274F27665BF6000F51A7 /* Admin.swift in Sources */,
+				20089E5F276CD95200EDA42B /* OrdersCell.swift in Sources */,
 				20BDBB6C27610864001D7822 /* FirebaseAuthManager.swift in Sources */,
 				20F87CE42764E0840049FF35 /* CGButton.swift in Sources */,
+				20089E5A276B7DA100EDA42B /* CarDetailsViewController.swift in Sources */,
+				20FA61632769E88700E5E740 /* String+Ext.swift in Sources */,
+				20FA61652769E89D00E5E740 /* ViewController+Ext.swift in Sources */,
+				20089E63276CFA2200EDA42B /* CarsCell2.swift in Sources */,
+				20089E58276B4D4100EDA42B /* DashboardViewModel.swift in Sources */,
 				20BDBB6F27611079001D7822 /* LoginViewModel.swift in Sources */,
+				20089E5C276B95CD00EDA42B /* Order.swift in Sources */,
 				201BFBB9276100AC0058C974 /* SceneDelegate.swift in Sources */,
+				20089E66276D110300EDA42B /* OrdersViewController.swift in Sources */,
+				20089E52276A3D2400EDA42B /* CarOwner.swift in Sources */,
 				20F87CDB27649F060049FF35 /* CGTextField.swift in Sources */,
+				20FA61602768AE1000E5E740 /* AddAdminViewController.swift in Sources */,
 				20F87CE22764A7A10049FF35 /* DashboardViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -395,6 +482,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				201BFBBD276100AC0058C974 /* Base */,
+				206F2747276610E9000F51A7 /* ar */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
@@ -407,6 +495,15 @@
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
 		};
+		206F274C2766110A000F51A7 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				206F274B2766110A000F51A7 /* en */,
+				206F274D2766110D000F51A7 /* ar */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
@@ -414,6 +511,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
@@ -475,6 +573,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";

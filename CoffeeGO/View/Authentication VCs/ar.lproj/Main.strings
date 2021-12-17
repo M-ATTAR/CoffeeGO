@@ -1,0 +1,36 @@
+
+/* Class = "UIButton"; normalTitle = "Sign In"; ObjectID = "6Bi-aR-c7G"; */
+"6Bi-aR-c7G.normalTitle" = "Sign In";
+
+/* Class = "UIButton"; normalTitle = "  Forgot Password?  "; ObjectID = "JUD-XN-rDy"; */
+"JUD-XN-rDy.normalTitle" = "  Forgot Password?  ";
+
+/* Class = "UITextField"; placeholder = "Confirm Password"; ObjectID = "L2N-dl-IK4"; */
+"L2N-dl-IK4.placeholder" = "Confirm Password";
+
+/* Class = "UITextField"; placeholder = "First Name"; ObjectID = "LYc-7A-CGG"; */
+"LYc-7A-CGG.placeholder" = "First Name";
+
+/* Class = "UITextField"; placeholder = "Password"; ObjectID = "Nkh-Nd-2Kc"; */
+"Nkh-Nd-2Kc.placeholder" = "Password";
+
+/* Class = "UITextField"; placeholder = "Email"; ObjectID = "RZG-Cz-bt3"; */
+"RZG-Cz-bt3.placeholder" = "Email";
+
+/* Class = "UIButton"; normalTitle = "  Create an Account  "; ObjectID = "ThT-L5-21P"; */
+"ThT-L5-21P.normalTitle" = "  Create an Account  ";
+
+/* Class = "UITextField"; placeholder = "Email"; ObjectID = "YeH-n6-WjF"; */
+"YeH-n6-WjF.placeholder" = "Email";
+
+/* Class = "UITextField"; placeholder = "Password"; ObjectID = "hJP-Gn-tFo"; */
+"hJP-Gn-tFo.placeholder" = "Password";
+
+/* Class = "UITextField"; placeholder = "Phone Number"; ObjectID = "ltc-Wh-7JM"; */
+"ltc-Wh-7JM.placeholder" = "Phone Number";
+
+/* Class = "UITextField"; placeholder = "Last Name"; ObjectID = "oBu-3G-7TR"; */
+"oBu-3G-7TR.placeholder" = "Last Name";
+
+/* Class = "UIButton"; normalTitle = "Sign Up"; ObjectID = "vZm-E2-kph"; */
+"vZm-E2-kph.normalTitle" = "Sign Up";

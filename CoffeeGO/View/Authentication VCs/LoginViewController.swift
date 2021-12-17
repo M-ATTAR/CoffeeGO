@@ -27,26 +27,9 @@ class LoginViewController: UIViewController {
         
         self.hideKeyboardWhenTappedAround()
         
-//        configureUI()
-        
         bindUI()
     }
-    
-//    func configureUI() {
-//
-//        registerButton.backgroundColor = K.lightBrown
-//        registerButton.layer.cornerRadius = 10
-//        registerButton.setTitleColor(K.darkBrown , for: .normal)
-//
-//        forgotPasswordButton.backgroundColor = K.lightBrown
-//        forgotPasswordButton.layer.cornerRadius = 10
-//        forgotPasswordButton.setTitleColor(K.darkBrown , for: .normal)
-//
-//        loginButton.setTitleColor(K.darkBrown, for: .normal)
-//        loginButton.layer.cornerRadius = 10
-//        loginButton.backgroundColor = K.lightBrown
-//    }
-    
+
     func bindUI() {
         emailTextField.rx.text.orEmpty.bind(to: viewModel.email).disposed(by: disposeBag)
 
@@ -56,7 +39,7 @@ class LoginViewController: UIViewController {
     }
 
     func routeToVC(role: Roles) { // TODO: USER AND CAR OWNER ROUTING
-        let dashboardVC = UIStoryboard(name: K.dashboardStoryboard, bundle: nil).instantiateViewController(withIdentifier: K.dashboardTabBarID) as! UITabBarController
+        let dashboardVC = UIStoryboard(name: Storyboard.dashboardStoryboard, bundle: nil).instantiateViewController(withIdentifier: ID.dashboardTabBarID) as! UITabBarController
     
         switch role {
 

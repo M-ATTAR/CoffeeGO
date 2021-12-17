@@ -4,6 +4,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19454"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="Stack View standard spacing" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -18,7 +19,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="background" translatesAutoresizingMaskIntoConstraints="NO" id="N2X-Lx-cgE">
+                            <imageView hidden="YES" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="background" translatesAutoresizingMaskIntoConstraints="NO" id="N2X-Lx-cgE">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                             </imageView>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Email" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="RZG-Cz-bt3" customClass="CGTextField" customModule="CoffeeGO" customModuleProvider="target">
@@ -87,7 +88,7 @@
                                     </button>
                                 </subviews>
                             </stackView>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="coffeeCar" translatesAutoresizingMaskIntoConstraints="NO" id="kzn-6W-QEs">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="coffee_car" translatesAutoresizingMaskIntoConstraints="NO" id="kzn-6W-QEs">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="432.66666666666669"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="kzn-6W-QEs" secondAttribute="height" multiplier="714:746" id="Q8A-ut-gsH"/>
@@ -95,7 +96,7 @@
                             </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" name="backgroundColor"/>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="kzn-6W-QEs" secondAttribute="trailing" id="9G1-80-a0x"/>
                             <constraint firstItem="6Bi-aR-c7G" firstAttribute="top" secondItem="Nkh-Nd-2Kc" secondAttribute="bottom" constant="15" id="BxF-WX-qXo"/>
@@ -276,7 +277,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ayX-yX-Ize" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1714" y="83"/>
+            <point key="canvasLocation" x="1810" y="83"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="027-48-Ycw">
@@ -309,31 +310,31 @@
             <size key="intrinsicContentSize" width="139" height="30"/>
         </designable>
         <designable name="L2N-dl-IK4">
-            <size key="intrinsicContentSize" width="132" height="20"/>
+            <size key="intrinsicContentSize" width="147" height="20"/>
         </designable>
         <designable name="LYc-7A-CGG">
-            <size key="intrinsicContentSize" width="78.333333333333329" height="21"/>
+            <size key="intrinsicContentSize" width="93.333333333333329" height="21"/>
         </designable>
         <designable name="Nkh-Nd-2Kc">
-            <size key="intrinsicContentSize" width="70" height="20"/>
+            <size key="intrinsicContentSize" width="85" height="20"/>
         </designable>
         <designable name="RZG-Cz-bt3">
-            <size key="intrinsicContentSize" width="39" height="21"/>
+            <size key="intrinsicContentSize" width="117.33333333333333" height="21"/>
         </designable>
         <designable name="ThT-L5-21P">
             <size key="intrinsicContentSize" width="143" height="30"/>
         </designable>
         <designable name="YeH-n6-WjF">
-            <size key="intrinsicContentSize" width="39" height="21"/>
+            <size key="intrinsicContentSize" width="117.33333333333333" height="21"/>
         </designable>
         <designable name="hJP-Gn-tFo">
-            <size key="intrinsicContentSize" width="70" height="20"/>
+            <size key="intrinsicContentSize" width="85" height="20"/>
         </designable>
         <designable name="ltc-Wh-7JM">
-            <size key="intrinsicContentSize" width="108.66666666666667" height="21"/>
+            <size key="intrinsicContentSize" width="123.66666666666667" height="21"/>
         </designable>
         <designable name="oBu-3G-7TR">
-            <size key="intrinsicContentSize" width="77.666666666666671" height="21"/>
+            <size key="intrinsicContentSize" width="92.666666666666671" height="21"/>
         </designable>
         <designable name="vZm-E2-kph">
             <size key="intrinsicContentSize" width="54" height="30"/>
@@ -341,7 +342,10 @@
     </designables>
     <resources>
         <image name="background" width="250" height="541.33331298828125"/>
-        <image name="coffeeCar" width="248.66667175292969" height="238"/>
+        <image name="coffee_car" width="746" height="714"/>
+        <namedColor name="backgroundColor">
+            <color red="0.97299998998641968" green="0.91399997472763062" blue="0.83899998664855957" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
