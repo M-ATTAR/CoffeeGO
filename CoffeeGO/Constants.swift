@@ -23,6 +23,7 @@ struct ID { // View Controllers Storyboard IDs
     static let dashboardTabBarID = "DashboardTab"
     static let carDetailsID = "CarDetailsViewController"
     static let ordersVCID = "OrdersViewController"
+    static let orderDetailsVCID = "OrderDetailsViewController"
 }
 
 struct Storyboard { // Storyboard Names
@@ -45,4 +46,9 @@ enum Roles: String {
     case admin = "admin"
     case user = "user"
     case carOwner = "carOwner"
+}
+enum Status: Int {
+    case all = 0
+    case active = 1
+    case inactive = 2
 }

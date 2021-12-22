@@ -9,25 +9,28 @@ import UIKit
 import RxSwift
 import RxCocoa
 
-class AdminsViewController: UIViewController {
+class RequestsViewController: UIViewController {
     
-    let viewModel = AdminsViewModel()
+    let viewModel = RequestsViewModel()
     let bag = DisposeBag()
     var loadingAlert = UIAlertController()
     
-    @IBOutlet weak var adminsTableView: UITableView!
+    @IBOutlet weak var RequestsTableView: UITableView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        adminsTableView.register(UITableViewCell.self, forCellReuseIdentifier: "cell")
-        adminsTableView.backgroundColor = .clear
-        adminsTableView.allowsSelection = false
+        viewModel.subToFirebase()
+        
+        RequestsTableView.register(UINib(nibName: "RequestsCell", bundle: nil), forCellReuseIdentifier: "RequestCell")
+        RequestsTableView.backgroundColor = .clear
+        RequestsTableView.allowsSelection = false
         
         loadingAlert = self.loadingMessage("Loading...")
         subToProcess()
         
         bindTableData()
+        
     }
     
     func subToProcess() {
@@ -47,20 +50,29 @@ class AdminsViewController: UIViewController {
     }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        viewModel.getAdminsPS()
+//        viewModel.getAdminsPS()
+        viewModel.getRequests()
     }
 }
 
 
-extension AdminsViewController {
+extension RequestsViewController {
     func bindTableData() {
         // Bind articles to table.
-        viewModel.admins.bind(to: adminsTableView.rx.items(cellIdentifier: "cell", cellType: UITableViewCell.self)) { row, model, cell in
+        viewModel.reqSubject.bind(to: RequestsTableView.rx.items(cellIdentifier: "RequestCell", cellType: RequestsCell.self)) { row, request, cell in
             
-            cell.textLabel?.text = model.name
+            cell.request = request
             
-            cell.textLabel?.textColor = .white
-            cell.backgroundColor = .systemBrown
+            cell.declineButtonTapped = {
+                self.present(self.loadingAlert, animated: true) {
+                    self.viewModel.respondToRequest(isAccepted: false, request: request)
+                }
+            }
+            cell.acceptButtonTapped = {
+                self.present(self.loadingAlert, animated: true) {
+                    self.viewModel.respondToRequest(isAccepted: true, request: request)
+                }
+            }
             
         }.disposed(by: bag)
     }

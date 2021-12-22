@@ -11,7 +11,11 @@ import FirebaseFirestore
 struct Order {
     var price: Double?
     var timestamp: Timestamp?
-    var carOwner: String?
+    var carOwnerID: String?
+    var carOwnerName: String?
+    var userName: String?
     var userID: String?
     var orderDetails: String?
+    var orderID: String?
+    var status: String?
 }

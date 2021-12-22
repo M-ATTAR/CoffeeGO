@@ -30,20 +30,53 @@ class DashboardViewModel {
     }
 
     func getCars() {
-//        isLoading.onNext(true)
         firebaseDB.getCars()
     }
 
-    func filterActiveCars() {
+    private func filterActiveCars() {
         cars.onNext(carsArray.filter {$0.isActive == true})
     }
-    func filterInactiveCars() {
+    private func filterInactiveCars() {
         cars.onNext(carsArray.filter {$0.isActive == false})
     }
-    func filterAllCars() {
-        cars.onNext(carsArray.filter {$0.isActive == true || $0.isActive == false})
+    private func filterAllCars() {
+        cars.onNext(carsArray)
     }
+    
+    func filterCars(status: Status) {
+        switch status {
+        case .all:
+            filterAllCars()
+        case .active:
+            filterActiveCars()
+        case .inactive:
+            filterInactiveCars()
+        }
+    }
+    
     func deleteCar(uid: String) {
         firebaseDB.deleteCarOwner(uid: uid)
+    }
+    func searchCar(status: Status,_ text: String) {
+        
+        switch status {
+        case .all:
+            cars.onNext(carsArray.filter { $0.name!.contains(text) || $0.city!.contains(text) } )
+        case .active:
+            cars.onNext(carsArray.filter { ($0.name!.contains(text) || $0.city!.contains(text)) && $0.isActive == true } )
+        case .inactive:
+            cars.onNext(carsArray.filter { ($0.name!.contains(text) || $0.city!.contains(text)) && $0.isActive == false } )
+        }
+
+    }
+    func cancelSearch(status: Status) {
+        switch status {
+        case .all:
+            filterAllCars()
+        case .active:
+            filterActiveCars()
+        case .inactive:
+            filterInactiveCars()
+        }
     }
 }

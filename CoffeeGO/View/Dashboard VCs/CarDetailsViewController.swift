@@ -30,15 +30,32 @@ class CarDetailsViewController: UIViewController {
     var cordinate = CLLocationCoordinate2D()
     var address: String = ""
     var viewModel = DashboardViewModel()
+    
     @IBOutlet weak var phNumberButton: CGButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        navigationItem.largeTitleDisplayMode = .never
+        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Delete this car", style: .plain, target: self, action: #selector(deleteButtonTapped))
+                
+        let tap = UITapGestureRecognizer(target: self, action: #selector(self.handleTap(_:)))
+        let tap2 = UITapGestureRecognizer(target: self, action: #selector(self.handleTap(_:)))
+        
         locationMapView.layer.cornerRadius = 15
         revView.layer.cornerRadius = 10
         ordersView.layer.cornerRadius = 10
+        
+        revView.addGestureRecognizer(tap2)
+        ordersView.addGestureRecognizer(tap)
     }
-    
+    @objc func handleTap(_ sender: UITapGestureRecognizer? = nil) {
+        let vc = UIStoryboard(name: Storyboard.dashboardStoryboard, bundle: nil).instantiateViewController(withIdentifier: ID.ordersVCID) as! OrdersViewController
+        
+        vc.carOwnerID = carOwner?.uid
+//        vc.modalPresentationStyle = .overFullScreen
+//        present(vc, animated: true)
+        self.navigationController?.pushViewController(vc, animated: true)
+    }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         setupUI()
@@ -110,9 +127,6 @@ class CarDetailsViewController: UIViewController {
         dismiss(animated: true) {
             self.delegate?.modalPresentationEnded()
         }
-    }
-    @IBAction func backButtonTapped(_ sender: UIButton) {
-        dismiss(animated: true)
     }
     
     @IBAction func phNumberButtonTapped(_ sender: CGButton) {

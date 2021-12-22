@@ -18,6 +18,10 @@
 		20089E63276CFA2200EDA42B /* CarsCell2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20089E61276CFA2200EDA42B /* CarsCell2.swift */; };
 		20089E64276CFA2200EDA42B /* CarsCell2.xib in Resources */ = {isa = PBXBuildFile; fileRef = 20089E62276CFA2200EDA42B /* CarsCell2.xib */; };
 		20089E66276D110300EDA42B /* OrdersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20089E65276D110300EDA42B /* OrdersViewController.swift */; };
+		20089E68276D188700EDA42B /* OrdersViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20089E67276D188700EDA42B /* OrdersViewModel.swift */; };
+		20089E6A276E5C6E00EDA42B /* Request.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20089E69276E5C6E00EDA42B /* Request.swift */; };
+		20089E6D276E651100EDA42B /* RequestsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20089E6B276E651100EDA42B /* RequestsCell.swift */; };
+		20089E6E276E651100EDA42B /* RequestsCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 20089E6C276E651100EDA42B /* RequestsCell.xib */; };
 		201BFBB7276100AC0058C974 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 201BFBB6276100AC0058C974 /* AppDelegate.swift */; };
 		201BFBB9276100AC0058C974 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 201BFBB8276100AC0058C974 /* SceneDelegate.swift */; };
 		201BFBBB276100AC0058C974 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 201BFBBA276100AC0058C974 /* LoginViewController.swift */; };
@@ -25,10 +29,14 @@
 		201BFBC0276100B00058C974 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 201BFBBF276100B00058C974 /* Assets.xcassets */; };
 		201BFBC3276100B00058C974 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 201BFBC1276100B00058C974 /* LaunchScreen.storyboard */; };
 		201BFBCB2761018C0058C974 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 201BFBCA2761018C0058C974 /* GoogleService-Info.plist */; };
+		204DC3832770F57500539487 /* OrderDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 204DC3822770F57400539487 /* OrderDetailsView.swift */; };
+		204DC3852770F58E00539487 /* OrderDetailsView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 204DC3842770F58E00539487 /* OrderDetailsView.xib */; };
+		204DC3872771004000539487 /* Date+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 204DC3862771004000539487 /* Date+Ext.swift */; };
+		204DC3892771048200539487 /* OrderDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 204DC3882771048200539487 /* OrderDetailsViewController.swift */; };
 		206F274A2766110A000F51A7 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 206F274C2766110A000F51A7 /* Localizable.strings */; };
 		206F274F27665BF6000F51A7 /* Admin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 206F274E27665BF6000F51A7 /* Admin.swift */; };
-		206F275127665D80000F51A7 /* AdminsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 206F275027665D80000F51A7 /* AdminsViewController.swift */; };
-		206F275327665DF5000F51A7 /* AdminsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 206F275227665DF5000F51A7 /* AdminsViewModel.swift */; };
+		206F275127665D80000F51A7 /* RequestsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 206F275027665D80000F51A7 /* RequestsViewController.swift */; };
+		206F275327665DF5000F51A7 /* RequestsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 206F275227665DF5000F51A7 /* RequestsViewModel.swift */; };
 		206F275527666264000F51A7 /* FirebaseDBManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 206F275427666264000F51A7 /* FirebaseDBManager.swift */; };
 		20BDBB6C27610864001D7822 /* FirebaseAuthManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20BDBB6B27610864001D7822 /* FirebaseAuthManager.swift */; };
 		20BDBB6F27611079001D7822 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20BDBB6E27611079001D7822 /* LoginViewModel.swift */; };
@@ -70,6 +78,10 @@
 		20089E61276CFA2200EDA42B /* CarsCell2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarsCell2.swift; sourceTree = "<group>"; };
 		20089E62276CFA2200EDA42B /* CarsCell2.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CarsCell2.xib; sourceTree = "<group>"; };
 		20089E65276D110300EDA42B /* OrdersViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrdersViewController.swift; sourceTree = "<group>"; };
+		20089E67276D188700EDA42B /* OrdersViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrdersViewModel.swift; sourceTree = "<group>"; };
+		20089E69276E5C6E00EDA42B /* Request.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Request.swift; sourceTree = "<group>"; };
+		20089E6B276E651100EDA42B /* RequestsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestsCell.swift; sourceTree = "<group>"; };
+		20089E6C276E651100EDA42B /* RequestsCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RequestsCell.xib; sourceTree = "<group>"; };
 		201BFBB3276100AC0058C974 /* CoffeeGO.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CoffeeGO.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		201BFBB6276100AC0058C974 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		201BFBB8276100AC0058C974 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -79,12 +91,16 @@
 		201BFBC2276100B00058C974 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		201BFBC4276100B00058C974 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		201BFBCA2761018C0058C974 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		204DC3822770F57400539487 /* OrderDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderDetailsView.swift; sourceTree = "<group>"; };
+		204DC3842770F58E00539487 /* OrderDetailsView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OrderDetailsView.xib; sourceTree = "<group>"; };
+		204DC3862771004000539487 /* Date+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Ext.swift"; sourceTree = "<group>"; };
+		204DC3882771048200539487 /* OrderDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderDetailsViewController.swift; sourceTree = "<group>"; };
 		206F2747276610E9000F51A7 /* ar */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ar; path = ar.lproj/Main.strings; sourceTree = "<group>"; };
 		206F274B2766110A000F51A7 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		206F274D2766110D000F51A7 /* ar */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ar; path = ar.lproj/Localizable.strings; sourceTree = "<group>"; };
 		206F274E27665BF6000F51A7 /* Admin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Admin.swift; sourceTree = "<group>"; };
-		206F275027665D80000F51A7 /* AdminsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdminsViewController.swift; sourceTree = "<group>"; };
-		206F275227665DF5000F51A7 /* AdminsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdminsViewModel.swift; sourceTree = "<group>"; };
+		206F275027665D80000F51A7 /* RequestsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestsViewController.swift; sourceTree = "<group>"; };
+		206F275227665DF5000F51A7 /* RequestsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestsViewModel.swift; sourceTree = "<group>"; };
 		206F275427666264000F51A7 /* FirebaseDBManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseDBManager.swift; sourceTree = "<group>"; };
 		20BDBB6B27610864001D7822 /* FirebaseAuthManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseAuthManager.swift; sourceTree = "<group>"; };
 		20BDBB6E27611079001D7822 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
@@ -169,6 +185,7 @@
 				206F274E27665BF6000F51A7 /* Admin.swift */,
 				20089E51276A3D2400EDA42B /* CarOwner.swift */,
 				20089E5B276B95CD00EDA42B /* Order.swift */,
+				20089E69276E5C6E00EDA42B /* Request.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -178,8 +195,9 @@
 			children = (
 				20BDBB6E27611079001D7822 /* LoginViewModel.swift */,
 				20BDBB7F27613546001D7822 /* RegisterViewModel.swift */,
-				206F275227665DF5000F51A7 /* AdminsViewModel.swift */,
 				20089E57276B4D4100EDA42B /* DashboardViewModel.swift */,
+				206F275227665DF5000F51A7 /* RequestsViewModel.swift */,
+				20089E67276D188700EDA42B /* OrdersViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -233,6 +251,10 @@
 				20089E5E276CD95200EDA42B /* OrdersCell.xib */,
 				20089E61276CFA2200EDA42B /* CarsCell2.swift */,
 				20089E62276CFA2200EDA42B /* CarsCell2.xib */,
+				20089E6B276E651100EDA42B /* RequestsCell.swift */,
+				20089E6C276E651100EDA42B /* RequestsCell.xib */,
+				204DC3822770F57400539487 /* OrderDetailsView.swift */,
+				204DC3842770F58E00539487 /* OrderDetailsView.xib */,
 			);
 			path = "Custom Views";
 			sourceTree = "<group>";
@@ -244,7 +266,8 @@
 				20F87CE12764A7A10049FF35 /* DashboardViewController.swift */,
 				20089E59276B7DA100EDA42B /* CarDetailsViewController.swift */,
 				20089E65276D110300EDA42B /* OrdersViewController.swift */,
-				206F275027665D80000F51A7 /* AdminsViewController.swift */,
+				204DC3882771048200539487 /* OrderDetailsViewController.swift */,
+				206F275027665D80000F51A7 /* RequestsViewController.swift */,
 				20FA615D2767ADD800E5E740 /* AdminSettingsViewController.swift */,
 				20FA615F2768AE1000E5E740 /* AddAdminViewController.swift */,
 			);
@@ -256,6 +279,7 @@
 			children = (
 				20FA61622769E88700E5E740 /* String+Ext.swift */,
 				20FA61642769E89C00E5E740 /* ViewController+Ext.swift */,
+				204DC3862771004000539487 /* Date+Ext.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -363,6 +387,7 @@
 			files = (
 				201BFBC3276100B00058C974 /* LaunchScreen.storyboard in Resources */,
 				20089E64276CFA2200EDA42B /* CarsCell2.xib in Resources */,
+				204DC3852770F58E00539487 /* OrderDetailsView.xib in Resources */,
 				206F274A2766110A000F51A7 /* Localizable.strings in Resources */,
 				20089E56276B32EA00EDA42B /* CarsCell.xib in Resources */,
 				20F87CDD2764A6180049FF35 /* Dashboard.storyboard in Resources */,
@@ -370,6 +395,7 @@
 				201BFBC0276100B00058C974 /* Assets.xcassets in Resources */,
 				20089E60276CD95200EDA42B /* OrdersCell.xib in Resources */,
 				201BFBBE276100AC0058C974 /* Main.storyboard in Resources */,
+				20089E6E276E651100EDA42B /* RequestsCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -429,25 +455,31 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				206F275327665DF5000F51A7 /* AdminsViewModel.swift in Sources */,
+				206F275327665DF5000F51A7 /* RequestsViewModel.swift in Sources */,
 				201BFBBB276100AC0058C974 /* LoginViewController.swift in Sources */,
 				20089E55276B32EA00EDA42B /* CarsCell.swift in Sources */,
+				204DC3872771004000539487 /* Date+Ext.swift in Sources */,
 				20BDBB8627622DF7001D7822 /* Constants.swift in Sources */,
-				206F275127665D80000F51A7 /* AdminsViewController.swift in Sources */,
+				206F275127665D80000F51A7 /* RequestsViewController.swift in Sources */,
 				206F275527666264000F51A7 /* FirebaseDBManager.swift in Sources */,
+				20089E6A276E5C6E00EDA42B /* Request.swift in Sources */,
 				20BDBB8027613546001D7822 /* RegisterViewModel.swift in Sources */,
 				20FA615E2767ADD800E5E740 /* AdminSettingsViewController.swift in Sources */,
+				204DC3832770F57500539487 /* OrderDetailsView.swift in Sources */,
 				20BDBB82276138AF001D7822 /* RegisterViewController.swift in Sources */,
 				201BFBB7276100AC0058C974 /* AppDelegate.swift in Sources */,
 				206F274F27665BF6000F51A7 /* Admin.swift in Sources */,
 				20089E5F276CD95200EDA42B /* OrdersCell.swift in Sources */,
 				20BDBB6C27610864001D7822 /* FirebaseAuthManager.swift in Sources */,
 				20F87CE42764E0840049FF35 /* CGButton.swift in Sources */,
+				204DC3892771048200539487 /* OrderDetailsViewController.swift in Sources */,
+				20089E6D276E651100EDA42B /* RequestsCell.swift in Sources */,
 				20089E5A276B7DA100EDA42B /* CarDetailsViewController.swift in Sources */,
 				20FA61632769E88700E5E740 /* String+Ext.swift in Sources */,
 				20FA61652769E89D00E5E740 /* ViewController+Ext.swift in Sources */,
 				20089E63276CFA2200EDA42B /* CarsCell2.swift in Sources */,
 				20089E58276B4D4100EDA42B /* DashboardViewModel.swift in Sources */,
+				20089E68276D188700EDA42B /* OrdersViewModel.swift in Sources */,
 				20BDBB6F27611079001D7822 /* LoginViewModel.swift in Sources */,
 				20089E5C276B95CD00EDA42B /* Order.swift in Sources */,
 				201BFBB9276100AC0058C974 /* SceneDelegate.swift in Sources */,

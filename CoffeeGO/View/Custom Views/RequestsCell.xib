@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="RequestCell" rowHeight="150" id="KGk-i7-Jjw" customClass="RequestsCell" customModule="CoffeeGO" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="417" height="150"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="417" height="150"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="IRP-EJ-rlL">
+                        <rect key="frame" x="10" y="0.0" width="397" height="130"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pns-TR-MLQ">
+                                <rect key="frame" x="10" y="5" width="377" height="24"/>
+                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="20"/>
+                                <color key="textColor" name="backgroundColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="cAB-AS-ojT">
+                                <rect key="frame" x="96.5" y="67" width="204" height="47"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gZE-Le-UK6">
+                                        <rect key="frame" x="0.0" y="0.0" width="97" height="47"/>
+                                        <color key="tintColor" systemColor="systemRedColor"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="tinted" image="x.circle.fill" catalog="system" title=" Decline"/>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1K0-v4-fxQ">
+                                        <rect key="frame" x="107" y="0.0" width="97" height="47"/>
+                                        <color key="tintColor" systemColor="systemGreenColor"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="tinted" image="checkmark.circle.fill" catalog="system" title=" Accept"/>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="City" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5eJ-l1-Aba">
+                                <rect key="frame" x="10" y="34" width="26" height="17"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <color key="textColor" name="backgroundColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" name="foregroundColor"/>
+                        <constraints>
+                            <constraint firstItem="cAB-AS-ojT" firstAttribute="top" secondItem="5eJ-l1-Aba" secondAttribute="bottom" constant="16" id="4GR-hd-yM9"/>
+                            <constraint firstItem="pns-TR-MLQ" firstAttribute="top" secondItem="IRP-EJ-rlL" secondAttribute="top" constant="5" id="O1b-7H-PuS"/>
+                            <constraint firstItem="pns-TR-MLQ" firstAttribute="leading" secondItem="IRP-EJ-rlL" secondAttribute="leading" constant="10" id="QK3-EK-1Og"/>
+                            <constraint firstItem="cAB-AS-ojT" firstAttribute="centerX" secondItem="IRP-EJ-rlL" secondAttribute="centerX" id="XoN-be-IKO"/>
+                            <constraint firstItem="5eJ-l1-Aba" firstAttribute="leading" secondItem="IRP-EJ-rlL" secondAttribute="leading" constant="10" id="awT-hf-hcg"/>
+                            <constraint firstItem="5eJ-l1-Aba" firstAttribute="top" secondItem="pns-TR-MLQ" secondAttribute="bottom" constant="5" id="gP5-NX-tbr"/>
+                            <constraint firstAttribute="bottom" secondItem="cAB-AS-ojT" secondAttribute="bottom" constant="16" id="pAh-1L-lQK"/>
+                            <constraint firstAttribute="trailing" secondItem="pns-TR-MLQ" secondAttribute="trailing" constant="10" id="tJ1-5N-UAm"/>
+                        </constraints>
+                    </view>
+                </subviews>
+                <constraints>
+                    <constraint firstAttribute="bottom" secondItem="IRP-EJ-rlL" secondAttribute="bottom" constant="20" id="6CZ-Ix-HzL"/>
+                    <constraint firstAttribute="trailing" secondItem="IRP-EJ-rlL" secondAttribute="trailing" constant="10" id="MNJ-U8-NjE"/>
+                    <constraint firstItem="IRP-EJ-rlL" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="10" id="nB1-Lg-W7o"/>
+                    <constraint firstItem="IRP-EJ-rlL" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="yQu-cz-qdu"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="acceptButton" destination="1K0-v4-fxQ" id="67V-tN-pC7"/>
+                <outlet property="cellView" destination="IRP-EJ-rlL" id="hXW-ER-YQB"/>
+                <outlet property="cityLabel" destination="5eJ-l1-Aba" id="2mD-2R-cne"/>
+                <outlet property="declineButton" destination="gZE-Le-UK6" id="Kf1-Qg-9fN"/>
+                <outlet property="nameLabel" destination="pns-TR-MLQ" id="h3p-1v-bDd"/>
+            </connections>
+            <point key="canvasLocation" x="207.97101449275365" y="105.13392857142857"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="checkmark.circle.fill" catalog="system" width="128" height="121"/>
+        <image name="x.circle.fill" catalog="system" width="128" height="121"/>
+        <namedColor name="backgroundColor">
+            <color red="0.97299998998641968" green="0.91399997472763062" blue="0.83899998664855957" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="foregroundColor">
+            <color red="0.52499997615814209" green="0.39599999785423279" blue="0.28999999165534973" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <systemColor name="systemGreenColor">
+            <color red="0.20392156862745098" green="0.7803921568627451" blue="0.34901960784313724" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemRedColor">
+            <color red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>

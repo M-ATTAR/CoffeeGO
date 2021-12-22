@@ -7,6 +7,7 @@
 
 import Foundation
 import FirebaseFirestore
+import Firebase
 import RxSwift
 import RxCocoa
 
@@ -16,6 +17,7 @@ class FirebaseDBManager {
     let adminsSubject = PublishSubject<[Admin]>()
     let carOwnerSubject = PublishSubject<[CarOwner]>()
     let ordersSubject = PublishSubject<[Order]>()
+    let requestsSubject = PublishSubject<[Request]>()
     
     func getAdminsPS() {
         
@@ -41,10 +43,11 @@ class FirebaseDBManager {
         var carOwner = CarOwner()
         var tempCarOwners = [CarOwner]()
         
-        self.db.collection("users").order(by: "addedTimestamp", descending: true).whereField("role", isEqualTo: "carOwner").getDocuments { snapshot, error in
+        self.db.collection("users").order(by: "addedTimestamp", descending: true).whereField("role", isEqualTo: "carOwner").addSnapshotListener { snapshot, error in
             if let error = error {
                 self.carOwnerSubject.onError(error)
             } else {
+                tempCarOwners = []
                 for document in snapshot!.documents {
                     
                     carOwner.name           = document.data()["name"] as? String
@@ -71,16 +74,21 @@ class FirebaseDBManager {
         var order = Order()
         var tempOrders = [Order]()
         
-        self.db.collection("orders").order(by: "timestamp", descending: true).whereField(role.rawValue, isEqualTo: uid).getDocuments { snapshot, error in
+        self.db.collection("orders").order(by: "timestamp", descending: true).whereField(role.rawValue, isEqualTo: uid).addSnapshotListener { snapshot, error in
             if let error = error {
                 self.ordersSubject.onError(error)
             } else {
+                tempOrders = []
                 for document in snapshot!.documents {
-                    order.carOwner = document.data()["carOwner"] as? String
-                    order.userID = document.data()["userID"] as? String
-                    order.price = document.data()["price"] as? Double
-                    order.timestamp = document.data()["timestamp"] as? Timestamp
+                    order.carOwnerID   = document.data()["carOwnerID"] as? String
+                    order.carOwnerName = document.data()["carOwnerName"] as? String
+                    order.userName     = document.data()["userName"] as? String
+                    order.userID       = document.data()["userID"] as? String
+                    order.price        = document.data()["price"] as? Double
+                    order.timestamp    = document.data()["timestamp"] as? Timestamp
                     order.orderDetails = document.data()["orderDetails"] as? String
+                    order.orderID      = document.data()["orderID"] as? String
+                    order.status       = document.data()["status"] as? String
                     
                     tempOrders.append(order)
                 }
@@ -98,8 +106,74 @@ class FirebaseDBManager {
                 self.db.collection("users").document(uid).delete()
             }
         }
-        
-        
     }
     
+    func getRequests() {
+        var requests = Request()
+        var tempReq = [Request]()
+        
+        self.db.collection("requests").order(by: "timestamp", descending: true).getDocuments { snapshot, error in
+            if let error = error {
+                self.requestsSubject.onError(error)
+            } else {
+                for document in snapshot!.documents {
+                    requests.uid = document.data()["uid"] as? String
+                    requests.timestamp = document.data()["timestamp"] as? Timestamp
+                    requests.city = document.data()["city"] as? String
+                    requests.nationalID = document.data()["nationalID"] as? String
+                    requests.location = document.data()["location"] as? GeoPoint
+                    requests.name = document.data()["name"] as? String
+                    
+                    tempReq.append(requests)
+                }
+                self.requestsSubject.onNext(tempReq)
+            }
+        }
+    }
+    
+    func acceptRequest(request: Request) {
+        db.collection("users").document(request.uid!).setData(
+        [
+            "addedTimestamp": Timestamp(date: Date()),
+            "city": request.city,
+            "nationalID": request.nationalID,
+            "location": request.location,
+            "isActive": false,
+            "totalOrders": 0,
+            "totalRevenue": 0,
+            "role": Roles.carOwner.rawValue
+        ], merge: true ) { err in
+            if let err = err {
+                self.requestsSubject.onError(err)
+            } else {
+                self.db.collection("requests").document(request.uid!).delete()
+                self.getRequests()
+            }
+        }
+    }
+    
+    func declineRequest(request: Request) {
+        self.db.collection("requests").document(request.uid!).delete { error in
+            if let error = error {
+                self.requestsSubject.onError(error)
+            } else {
+                self.getRequests()
+            }
+        }
+    }
+    
+    
 }
+
+
+/*
+ 1 - Latte - $12.50
+ 2 - Iced Tea - $25.0
+ 1 - Black Coffee - $7.50
+ 1 - Latte - $12.50
+ 2 - Iced Tea - $25.0
+ 1 - Black Coffee - $7.50
+ 2 - Iced Tea - $25.0
+ 2 - Iced Tea - $25.0
+ 2 - Iced Tea - $25.0
+ */

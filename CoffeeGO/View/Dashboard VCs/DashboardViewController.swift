@@ -17,11 +17,13 @@ class DashboardViewController: UIViewController {
     let carDetailsVC = UIStoryboard(name: Storyboard.dashboardStoryboard, bundle: nil).instantiateViewController(withIdentifier: ID.carDetailsID) as! CarDetailsViewController
     
     
+    @IBOutlet weak var searchBar: UISearchBar!
     @IBOutlet weak var carStatusSegmentedControl: UISegmentedControl!
     @IBOutlet weak var carsTableView: UITableView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.hideKeyboardWhenTappedAround()
         
         setupUI()
         viewModel.subToCars()
@@ -32,10 +34,7 @@ class DashboardViewController: UIViewController {
         bindTableData()
         
         carDetailsVC.delegate = self
-    }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
+        searchBar.delegate = self
         
         self.present(loadingAlert, animated: true) {
             self.viewModel.getCars()
@@ -74,16 +73,7 @@ class DashboardViewController: UIViewController {
     }
     
     @IBAction func segmentedValueChanged(_ sender: UISegmentedControl) {
-        switch sender.selectedSegmentIndex {
-        case 0: // All Cars
-            viewModel.filterAllCars()
-        case 1: // Active Cars
-            viewModel.filterActiveCars()
-        case 2: // Inactive Cars
-            viewModel.filterInactiveCars()
-        default:
-            print("IDK")
-        }
+        viewModel.filterCars(status: Status(rawValue: carStatusSegmentedControl.selectedSegmentIndex)!)
     }
     
     
@@ -104,15 +94,30 @@ extension DashboardViewController: ModalPresentation {
         carsTableView.rx.modelSelected(CarOwner.self).bind { carOwner in
             // Push ViewController
             self.carDetailsVC.carOwner = carOwner
-            self.carDetailsVC.modalPresentationStyle = .overFullScreen
-            self.present(self.carDetailsVC, animated: true)
-//            self.navigationController?.pushViewController(self.carDetailsVC, animated: true)
+//            self.carDetailsVC.modalPresentationStyle = .overFullScreen
+//            self.present(self.carDetailsVC, animated: true)
+            self.navigationController?.pushViewController(self.carDetailsVC, animated: true)
         }.disposed(by: bag)
     }
     
     func modalPresentationEnded() {
-        self.present(loadingAlert, animated: true) {
-            self.viewModel.getCars()
+//        self.present(loadingAlert, animated: true) {
+//            self.viewModel.getCars()
+//        }
+    }
+}
+
+extension DashboardViewController: UISearchBarDelegate {
+    func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
+        viewModel.cancelSearch(status: Status(rawValue: carStatusSegmentedControl.selectedSegmentIndex)! )
+    }
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        
+        viewModel.searchCar(status: Status(rawValue: carStatusSegmentedControl.selectedSegmentIndex)!, searchText)
+        
+        
+        if searchText.isEmpty {
+            viewModel.cancelSearch(status: Status(rawValue: carStatusSegmentedControl.selectedSegmentIndex)!)
         }
     }
 }

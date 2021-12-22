@@ -32,8 +32,8 @@ extension AdminSettingsViewController: UITableViewDataSource, UITableViewDelegat
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
         
         cell.textLabel?.text = "Sign out"
-        cell.textLabel?.textColor = .white
-        cell.backgroundColor = .systemBrown
+        cell.textLabel?.textColor = Colors.backgroundC!
+        cell.backgroundColor = Colors.foregroundC!
         
         return cell
     }
