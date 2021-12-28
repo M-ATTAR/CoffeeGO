@@ -1,0 +1,225 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Orders-->
+        <scene sceneID="s0d-6b-0kx">
+            <objects>
+                <viewController id="Y6W-OH-hqX" customClass="COOrdersViewController" customModule="CoffeeGO" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="5EZ-qb-Rvc">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="bottom" translatesAutoresizingMaskIntoConstraints="NO" id="hhF-Z4-HMk">
+                                <rect key="frame" x="0.0" y="44" width="375" height="623"/>
+                                <subviews>
+                                    <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" style="compact" translatesAutoresizingMaskIntoConstraints="NO" id="tKT-qC-MaM">
+                                        <rect key="frame" x="55" y="0.0" width="320" height="50"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="50" id="ZEb-5s-DC3"/>
+                                        </constraints>
+                                        <connections>
+                                            <action selector="dateChanged:" destination="Y6W-OH-hqX" eventType="valueChanged" id="sf2-yH-0ph"/>
+                                        </connections>
+                                    </datePicker>
+                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" verticalCompressionResistancePriority="751" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="xcl-4g-EOw">
+                                        <rect key="frame" x="0.0" y="50" width="375" height="573"/>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                    </tableView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="xcl-4g-EOw" firstAttribute="top" secondItem="tKT-qC-MaM" secondAttribute="bottom" id="3yV-wl-uGG"/>
+                                    <constraint firstItem="xcl-4g-EOw" firstAttribute="leading" secondItem="hhF-Z4-HMk" secondAttribute="leading" id="9Va-3B-qIg"/>
+                                    <constraint firstAttribute="bottom" secondItem="xcl-4g-EOw" secondAttribute="bottom" id="o3l-BZ-HR2"/>
+                                    <constraint firstAttribute="trailing" secondItem="xcl-4g-EOw" secondAttribute="trailing" id="q2H-O6-k00"/>
+                                </constraints>
+                            </stackView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
+                        <color key="backgroundColor" name="backgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="hhF-Z4-HMk" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" id="AUo-MM-ihf"/>
+                            <constraint firstItem="hhF-Z4-HMk" firstAttribute="leading" secondItem="5EZ-qb-Rvc" secondAttribute="leading" id="D3y-om-9X5"/>
+                            <constraint firstAttribute="bottom" secondItem="hhF-Z4-HMk" secondAttribute="bottom" id="MmK-p5-njw"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="hhF-Z4-HMk" secondAttribute="trailing" id="NbJ-Gw-WrV"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Orders" id="hFE-Ra-x3g">
+                        <segmentedControl key="titleView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="bar" selectedSegmentIndex="0" id="6yo-t0-Xpl">
+                            <rect key="frame" x="8" y="5.5" width="359" height="33"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <segments>
+                                <segment title="Pending"/>
+                                <segment title="Preparing"/>
+                                <segment title="Ready"/>
+                                <segment title="Done"/>
+                                <segment title="Declined"/>
+                            </segments>
+                            <connections>
+                                <action selector="orderStatusChange:" destination="Y6W-OH-hqX" eventType="valueChanged" id="MI5-Ya-iiV"/>
+                            </connections>
+                        </segmentedControl>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="datePicker" destination="tKT-qC-MaM" id="fhY-Xi-WXq"/>
+                        <outlet property="orderStatusSegmentedControl" destination="6yo-t0-Xpl" id="8hE-4n-Xhy"/>
+                        <outlet property="ordersTableView" destination="xcl-4g-EOw" id="esj-B5-LnK"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1941.5999999999999" y="-415.14242878560725"/>
+        </scene>
+        <!--Settings-->
+        <scene sceneID="PUS-cP-LPj">
+            <objects>
+                <viewController id="pO6-ZA-eUB" customClass="COSettingsViewController" customModule="CoffeeGO" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="pkQ-Yd-x3W">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="insetGrouped" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" estimatedSectionHeaderHeight="-1" sectionFooterHeight="18" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="xfC-EH-1FG">
+                                <rect key="frame" x="0.0" y="96" width="375" height="571"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </tableView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="e7B-bA-0Tm"/>
+                        <color key="backgroundColor" name="backgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="xfC-EH-1FG" firstAttribute="top" secondItem="e7B-bA-0Tm" secondAttribute="top" id="LjC-Tp-nyn"/>
+                            <constraint firstAttribute="bottom" secondItem="xfC-EH-1FG" secondAttribute="bottom" id="WUa-hZ-MNQ"/>
+                            <constraint firstItem="xfC-EH-1FG" firstAttribute="trailing" secondItem="e7B-bA-0Tm" secondAttribute="trailing" id="aMc-QG-G3n"/>
+                            <constraint firstItem="xfC-EH-1FG" firstAttribute="leading" secondItem="e7B-bA-0Tm" secondAttribute="leading" id="wNb-3Q-rHI"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Settings" id="KhD-fo-EcU"/>
+                    <connections>
+                        <outlet property="settingsTableView" destination="xfC-EH-1FG" id="1c8-zd-r53"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="4oo-RZ-cKg" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1033" y="1039"/>
+        </scene>
+        <!--Orders-->
+        <scene sceneID="TOP-Mz-gIP">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="lom-zh-NHk" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Orders" image="cup.and.saucer" catalog="system" selectedImage="cup.and.saucer.fill" id="uNx-PL-kag"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="eMf-qV-23x">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="Y6W-OH-hqX" kind="relationship" relationship="rootViewController" id="mUU-8n-aia"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="vv9-2r-Uro" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1033" y="-415"/>
+        </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="ock-Qx-Txx">
+            <objects>
+                <tabBarController storyboardIdentifier="CarOwnerTabBar" automaticallyAdjustsScrollViewInsets="NO" id="4gh-5J-Dyz" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Wd1-UL-yf9">
+                        <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="selectedImageTintColor" name="foregroundColor"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="lom-zh-NHk" kind="relationship" relationship="viewControllers" id="DeU-3K-rc3"/>
+                        <segue destination="PA0-wA-jr9" kind="relationship" relationship="viewControllers" id="pMB-9f-CZx"/>
+                        <segue destination="9R6-fu-Hsb" kind="relationship" relationship="viewControllers" id="yHE-Bg-wGX"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Bns-tk-MZO" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="137.68115942028987" y="69.642857142857139"/>
+        </scene>
+        <!--Menu-->
+        <scene sceneID="rro-3f-jie">
+            <objects>
+                <viewController id="Krd-8H-UyU" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="2oM-U1-qvj">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="0cO-Lr-6Lj"/>
+                        <color key="backgroundColor" name="backgroundColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Menu" id="m52-VV-u5w"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="fRm-at-4rV" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1942" y="320"/>
+        </scene>
+        <!--Settings-->
+        <scene sceneID="oTM-lH-fW4">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="9R6-fu-Hsb" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Settings" image="gearshape" catalog="system" selectedImage="gearshape.fill" id="MYS-VA-J7E"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" largeTitles="YES" id="fCt-YT-bWL">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="96"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="pO6-ZA-eUB" kind="relationship" relationship="rootViewController" id="GMh-Fx-q83"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="bWl-Yl-eiO" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="137" y="1040"/>
+        </scene>
+        <!--Menu-->
+        <scene sceneID="SnN-rx-Fr9">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="PA0-wA-jr9" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Menu" image="menucard" catalog="system" selectedImage="menucard.fill" id="jDT-LM-hfW"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" largeTitles="YES" id="6EW-cZ-zW2">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="96"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="Krd-8H-UyU" kind="relationship" relationship="rootViewController" id="xwe-Cx-4Lz"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="WS4-QV-TXk" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1033" y="320"/>
+        </scene>
+    </scenes>
+    <color key="tintColor" name="foregroundColor"/>
+    <resources>
+        <image name="cup.and.saucer" catalog="system" width="128" height="91"/>
+        <image name="cup.and.saucer.fill" catalog="system" width="128" height="91"/>
+        <image name="gearshape" catalog="system" width="128" height="121"/>
+        <image name="gearshape.fill" catalog="system" width="128" height="121"/>
+        <image name="menucard" catalog="system" width="107" height="128"/>
+        <image name="menucard.fill" catalog="system" width="106" height="128"/>
+        <namedColor name="backgroundColor">
+            <color red="0.97299998998641968" green="0.91399997472763062" blue="0.83899998664855957" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="foregroundColor">
+            <color red="0.52499997615814209" green="0.39599999785423279" blue="0.28999999165534973" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

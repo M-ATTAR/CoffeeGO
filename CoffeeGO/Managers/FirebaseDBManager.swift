@@ -18,6 +18,7 @@ class FirebaseDBManager {
     let carOwnerSubject = PublishSubject<[CarOwner]>()
     let ordersSubject = PublishSubject<[Order]>()
     let requestsSubject = PublishSubject<[Request]>()
+    let isActiveSubject = PublishSubject<Bool>()
     
     func getAdminsPS() {
         
@@ -98,6 +99,36 @@ class FirebaseDBManager {
         }
     }
     
+    func getOrdersForTimestamp(uid: String, timestamp: Date) {
+        let timestamp = Timestamp(date: timestamp)
+        var order = Order()
+        var tempOrders = [Order]()
+        
+        self.db.collection("orders").order(by: "timestamp", descending: true).whereField(Roles.carOwner.rawValue, isEqualTo: uid).whereField("timestamp", isEqualTo: timestamp).getDocuments { snapshot, error in
+            if let error = error {
+                self.ordersSubject.onError(error)
+            } else {
+                tempOrders = []
+                for document in snapshot!.documents {
+                    order.carOwnerID   = document.data()["carOwnerID"] as? String
+                    order.carOwnerName = document.data()["carOwnerName"] as? String
+                    order.userName     = document.data()["userName"] as? String
+                    order.userID       = document.data()["userID"] as? String
+                    order.price        = document.data()["price"] as? Double
+                    order.timestamp    = document.data()["timestamp"] as? Timestamp
+                    order.orderDetails = document.data()["orderDetails"] as? String
+                    order.orderID      = document.data()["orderID"] as? String
+                    order.status       = document.data()["status"] as? String
+                    
+                    tempOrders.append(order)
+                }
+                
+                self.ordersSubject.onNext(tempOrders)
+            }
+        }
+        
+    }
+    
     func deleteCarOwner(uid: String) {
 //        var carOwnerToDelete = CarOwner()
         self.db.collection("users").document(uid).getDocument { snapshot, error in
@@ -112,10 +143,12 @@ class FirebaseDBManager {
         var requests = Request()
         var tempReq = [Request]()
         
-        self.db.collection("requests").order(by: "timestamp", descending: true).getDocuments { snapshot, error in
+        self.db.collection("requests").order(by: "timestamp", descending: true).addSnapshotListener { snapshot, error in
             if let error = error {
                 self.requestsSubject.onError(error)
             } else {
+                tempReq = []
+                
                 for document in snapshot!.documents {
                     requests.uid = document.data()["uid"] as? String
                     requests.timestamp = document.data()["timestamp"] as? Timestamp
@@ -128,6 +161,34 @@ class FirebaseDBManager {
                 }
                 self.requestsSubject.onNext(tempReq)
             }
+        }
+    }
+    
+    func getReqObservable() -> Observable<[Request]> {
+        var requests = Request()
+        var tempReq = [Request]()
+        
+        return Observable.create { observer in
+            
+            self.db.collection("requests").order(by: "timestamp", descending: true).getDocuments { snapshot, error in
+                if let error = error {
+                    observer.onError(error)
+                } else {
+                    for document in snapshot!.documents {
+                        requests.uid = document.data()["uid"] as? String
+                        requests.timestamp = document.data()["timestamp"] as? Timestamp
+                        requests.city = document.data()["city"] as? String
+                        requests.nationalID = document.data()["nationalID"] as? String
+                        requests.location = document.data()["location"] as? GeoPoint
+                        requests.name = document.data()["name"] as? String
+                        
+                        tempReq.append(requests)
+                    }
+                    observer.onNext(tempReq)
+                }
+            }
+            
+            return Disposables.create()
         }
     }
     
@@ -162,18 +223,34 @@ class FirebaseDBManager {
         }
     }
     
+    func manageOrders(orderStatus: OrderStatus, orderID: String?) {
+        guard let orderID = orderID else {
+            return
+        }
+        switch orderStatus {
+        case .pending:
+            db.collection("orders").document(orderID).setData(["status":"Preparing"], merge: true)
+        case .preparing:
+            db.collection("orders").document(orderID).setData(["status":"Ready For Pickup"], merge: true)
+        case .ready:
+            db.collection("orders").document(orderID).setData(["status":"Done"], merge: true)
+        case .done:
+            print("Done")
+        case .declined:
+            db.collection("orders").document(orderID).setData(["status":"Declined"], merge: true)
+        }
+    }
     
+    func manageStatus(uid: String, newStatus: Bool){
+        db.collection("users").document(uid).setData(["isActive": newStatus], merge: true)
+    }
+    func getStatus(uid: String) {
+        db.collection("users").document(uid).addSnapshotListener { snapshot, error in
+            if let error = error {
+                self.isActiveSubject.onError(error)
+            } else {
+                self.isActiveSubject.onNext( snapshot?.get("isActive") as! Bool )
+            }
+        }
+    }
 }
-
-
-/*
- 1 - Latte - $12.50
- 2 - Iced Tea - $25.0
- 1 - Black Coffee - $7.50
- 1 - Latte - $12.50
- 2 - Iced Tea - $25.0
- 1 - Black Coffee - $7.50
- 2 - Iced Tea - $25.0
- 2 - Iced Tea - $25.0
- 2 - Iced Tea - $25.0
- */

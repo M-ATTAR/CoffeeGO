@@ -19,6 +19,7 @@ import FirebaseFirestore
     @IBOutlet weak var orderDetailsLabel: UILabel!
     @IBOutlet weak var statusLabel: UILabel!
     @IBOutlet weak var orderIDLabel: UILabel!
+    @IBOutlet weak var orderPriceLabel: UILabel!
     
     @IBOutlet weak var leftRoundedView: UIView!
     @IBOutlet weak var rightRoundedView: UIView!
@@ -34,7 +35,8 @@ import FirebaseFirestore
             
             statusLabel.text = order?.status
             
-            orderDetailsLabel.text = setOrderDetailsStringFormat(order?.orderDetails)
+            orderDetailsLabel.text = setOrderDetailsStringFormat(isPrice: false, order?.orderDetails)
+            orderPriceLabel.text = setOrderDetailsStringFormat(isPrice: true, order?.orderDetails)
 //            orderDetailsLabel.sizeToFit()
             
             dateLabel.text = order?.timestamp?.dateValue().convertToStringDate()
@@ -89,7 +91,7 @@ import FirebaseFirestore
             
         }
     }
-    func setOrderDetailsStringFormat(_ str: String?) -> String {
+    func setOrderDetailsStringFormat(isPrice: Bool, _ str: String?) -> String {
         guard let str = str else {
             return ""
         }
@@ -104,12 +106,20 @@ import FirebaseFirestore
         for orderDetail in orderDetails {
             
             let secondSplit = orderDetail.components(separatedBy: " - ")
-            orderD += "\n\(secondSplit[0]) x \(secondSplit[1]) ...... \(secondSplit[2])"
+            orderD += "\n\(secondSplit[0]) x \(secondSplit[1])"
+            orderPrice += "\n\(secondSplit[2])"
         }
+        print(orderPrice)
         
         orderD.removeFirst()
+        orderPrice.removeFirst()
         
-        return orderD
+        switch isPrice {
+        case true:
+            return orderPrice
+        case false:
+            return orderD
+        }
     }
 }
 

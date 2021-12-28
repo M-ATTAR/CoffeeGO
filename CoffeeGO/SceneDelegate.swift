@@ -7,6 +7,7 @@
 
 import UIKit
 import FirebaseAuth
+import FirebaseFirestore
 
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     
@@ -24,14 +25,31 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         window = UIWindow(frame: windowScene.coordinateSpace.bounds)
         window?.windowScene = windowScene
         
-        if let _ = Auth.auth().currentUser { // TODO: Check if deleted.
-            if defaults.string(forKey: "role") == Roles.admin.rawValue {
-                window?.rootViewController = UIStoryboard(name: Storyboard.dashboardStoryboard, bundle: nil).instantiateViewController(withIdentifier: ID.dashboardTabBarID) as! UITabBarController
+        
+        if let uid = Auth.auth().currentUser?.uid {
+            
+            Firestore.firestore().collection("users").document(uid).getDocument { snapshot, error in
+                if let snapshot = snapshot {
+                    let role = snapshot.get("role") as! String
+                    if role == Roles.admin.rawValue {
+                        self.window?.rootViewController = UIStoryboard(name: Storyboard.dashboardStoryboard, bundle: nil).instantiateViewController(withIdentifier: ID.dashboardTabBarID) as! UITabBarController
+                    } else if role == Roles.carOwner.rawValue {
+                        self.window?.rootViewController = UIStoryboard(name: Storyboard.carOwnerStoryboard, bundle: nil).instantiateViewController(withIdentifier: ID.carOwnerTabBarID) as! UITabBarController
+                    }
+                }
             }
         } else {
             window?.rootViewController = UIStoryboard(name: Storyboard.mainStoryboard, bundle: .main).instantiateViewController(withIdentifier: ID.rootNC) as! UINavigationController
         }
         
+//        if let _ = Auth.auth().currentUser { // TODO: Check if deleted.
+//            if defaults.string(forKey: "role") == Roles.admin.rawValue {
+//                window?.rootViewController = UIStoryboard(name: Storyboard.dashboardStoryboard, bundle: nil).instantiateViewController(withIdentifier: ID.dashboardTabBarID) as! UITabBarController
+//            }
+//        } else {
+//
+//        }
+//
         
         window?.makeKeyAndVisible()
     }
@@ -41,6 +59,10 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
             window.rootViewController = vc
             UIView.transition(with: window, duration: 0.8, options: .transitionFlipFromRight, animations: nil)
         }
+    }
+    
+    func getRoleFromFirebase(uid: String?) {
+        
     }
     
     func sceneDidDisconnect(_ scene: UIScene) {

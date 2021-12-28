@@ -40,6 +40,7 @@ class LoginViewController: UIViewController {
 
     func routeToVC(role: Roles) { // TODO: USER AND CAR OWNER ROUTING
         let dashboardVC = UIStoryboard(name: Storyboard.dashboardStoryboard, bundle: nil).instantiateViewController(withIdentifier: ID.dashboardTabBarID) as! UITabBarController
+        let carOwnerVC = UIStoryboard(name: Storyboard.carOwnerStoryboard, bundle: nil).instantiateViewController(withIdentifier: ID.carOwnerTabBarID) as! UITabBarController
     
         switch role {
 
@@ -52,6 +53,7 @@ class LoginViewController: UIViewController {
         case .carOwner: // Go To Car Owner Tab Controller
 //            self.navigationController?.pushViewController(vc, animated: true)
             print("car owner")
+            (UIApplication.shared.connectedScenes.first?.delegate as? SceneDelegate)?.setRootViewController(carOwnerVC)
         }
 
     }

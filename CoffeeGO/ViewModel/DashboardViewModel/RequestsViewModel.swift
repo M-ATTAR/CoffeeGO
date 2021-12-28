@@ -15,10 +15,12 @@ class RequestsViewModel {
     
     let reqSubject = PublishSubject<[Request]>()
     let isLoading = PublishSubject<Bool>()
+    let badgeNumber = PublishSubject<Int>()
 
     func subToFirebase() {
         firebaseDB.requestsSubject.subscribe { requests in
             self.reqSubject.onNext(requests)
+            self.badgeNumber.onNext(requests.count)
             self.isLoading.onNext(false)
         } onError: { error in
             self.isLoading.onError(error)

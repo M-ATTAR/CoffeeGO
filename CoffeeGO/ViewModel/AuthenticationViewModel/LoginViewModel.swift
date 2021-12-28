@@ -47,6 +47,7 @@ class LoginViewModel {
                 } else {
                     self.getRole(uid: authResult!.user.uid) { role in
                         observer.onNext(role)
+                        UserDefaults.standard.set(authResult!.user.uid, forKey: "userID")
                         observer.onCompleted()
                     }
                 }

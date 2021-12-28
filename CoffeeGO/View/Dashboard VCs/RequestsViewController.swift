@@ -27,10 +27,13 @@ class RequestsViewController: UIViewController {
         RequestsTableView.allowsSelection = false
         
         loadingAlert = self.loadingMessage("Loading...")
+        
         subToProcess()
+        subToBadgeNumber()
         
         bindTableData()
         
+        viewModel.getRequests()
     }
     
     func subToProcess() {
@@ -48,10 +51,23 @@ class RequestsViewController: UIViewController {
             }).disposed(by: bag)
         
     }
+    func subToBadgeNumber() {
+        viewModel.badgeNumber.subscribe { badgeNumber in
+            
+            if let badgeNumber = badgeNumber.element {
+                
+                self.tabBarController?.tabBar.items?[1].badgeValue = badgeNumber > 0 ? "\(badgeNumber)" : nil
+                
+            } else {
+                self.tabBarController?.tabBar.items?[1].badgeValue = nil
+            }
+        }.disposed(by: bag)
+
+    }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
 //        viewModel.getAdminsPS()
-        viewModel.getRequests()
+//        viewModel.getRequests()
     }
 }
 

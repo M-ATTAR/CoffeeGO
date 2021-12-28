@@ -425,6 +425,7 @@ PODS:
   - GTMSessionFetcher/Core (1.7.0)
   - IQKeyboardManagerSwift (6.5.9)
   - leveldb-library (1.22.1)
+  - lottie-ios (3.3.0)
   - nanopb (2.30908.0):
     - nanopb/decode (= 2.30908.0)
     - nanopb/encode (= 2.30908.0)
@@ -442,6 +443,7 @@ DEPENDENCIES:
   - Firebase/Auth
   - Firebase/Firestore
   - IQKeyboardManagerSwift
+  - lottie-ios
   - RxCocoa (= 6.2.0)
   - RxSwift (= 6.2.0)
 
@@ -461,6 +463,7 @@ SPEC REPOS:
     - GTMSessionFetcher
     - IQKeyboardManagerSwift
     - leveldb-library
+    - lottie-ios
     - nanopb
     - PromisesObjC
     - RxCocoa
@@ -482,12 +485,13 @@ SPEC CHECKSUMS:
   GTMSessionFetcher: 43748f93435c2aa068b1cbe39655aaf600652e91
   IQKeyboardManagerSwift: 6e839c575c4aa1078d58a596e41244e77abe918f
   leveldb-library: 50c7b45cbd7bf543c81a468fe557a16ae3db8729
+  lottie-ios: 6ac74dcc09904798f59b18cb3075c089d76be9ae
   nanopb: a0ba3315591a9ae0a16a309ee504766e90db0c96
   PromisesObjC: 68159ce6952d93e17b2dfe273b8c40907db5ba58
   RxCocoa: 4baf94bb35f2c0ab31bc0cb9f1900155f646ba42
   RxRelay: e72dbfd157807478401ef1982e1c61c945c94b2f
   RxSwift: d356ab7bee873611322f134c5f9ef379fa183d8f
 
-PODFILE CHECKSUM: 611649a22945b73d592844540e7dff28dc38b55d
+PODFILE CHECKSUM: 2d7c8358ee4bbf00ea38d9faf510258f51676a61
 
 COCOAPODS: 1.11.2

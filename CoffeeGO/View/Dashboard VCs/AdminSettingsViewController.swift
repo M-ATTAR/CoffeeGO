@@ -11,6 +11,8 @@ class AdminSettingsViewController: UIViewController {
     
     @IBOutlet weak var settingsTableView: UITableView!
     
+    let settingsArray = ["Sign out"]
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -25,13 +27,13 @@ class AdminSettingsViewController: UIViewController {
 
 extension AdminSettingsViewController: UITableViewDataSource, UITableViewDelegate { // TODO: Change to RX
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 1
+        return settingsArray.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
         
-        cell.textLabel?.text = "Sign out"
+        cell.textLabel?.text = settingsArray[indexPath.row]
         cell.textLabel?.textColor = Colors.backgroundC!
         cell.backgroundColor = Colors.foregroundC!
         

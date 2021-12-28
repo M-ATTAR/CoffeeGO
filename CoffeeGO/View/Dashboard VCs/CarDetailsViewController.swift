@@ -28,7 +28,7 @@ class CarDetailsViewController: UIViewController {
     
     var carOwner: CarOwner?
     var cordinate = CLLocationCoordinate2D()
-    var address: String = ""
+    
     var viewModel = DashboardViewModel()
     
     @IBOutlet weak var phNumberButton: CGButton!
@@ -76,6 +76,7 @@ class CarDetailsViewController: UIViewController {
         
         
         if let location = carOwner?.location {
+            var address: String = ""
             cordinate = CLLocationCoordinate2D(latitude: location.latitude, longitude: location.longitude)
             let annotation = MKPointAnnotation()
             
@@ -90,18 +91,18 @@ class CarDetailsViewController: UIViewController {
                 
                 // Street address
                 if let street = placeMark.thoroughfare {
-                    self.address += "\(street) "
+                    address += "\(street) "
                 }
                 // City
                 if let city = placeMark.subAdministrativeArea {
-                    self.address += city
+                    address += city
                 }
                 // Town
                 if let town = placeMark.locality {
-                    self.address += (" " + town)
+                    address += (" " + town)
                 }
             
-                annotation.subtitle = self.address
+                annotation.subtitle = address
             })
             
             annotation.title = carNameLabel.text
@@ -124,9 +125,10 @@ class CarDetailsViewController: UIViewController {
     }
     @IBAction func deleteButtonTapped(_ sender: UIButton) {
         viewModel.deleteCar(uid: carOwner?.uid ?? "")
-        dismiss(animated: true) {
-            self.delegate?.modalPresentationEnded()
-        }
+        navigationController?.popViewController(animated: true)
+//        dismiss(animated: true) {
+//            self.delegate?.modalPresentationEnded()
+//        }
     }
     
     @IBAction func phNumberButtonTapped(_ sender: CGButton) {

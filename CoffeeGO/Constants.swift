@@ -24,11 +24,15 @@ struct ID { // View Controllers Storyboard IDs
     static let carDetailsID = "CarDetailsViewController"
     static let ordersVCID = "OrdersViewController"
     static let orderDetailsVCID = "OrderDetailsViewController"
+    
+    // CarOwner Storyboard
+    static let carOwnerTabBarID = "CarOwnerTabBar"
 }
 
 struct Storyboard { // Storyboard Names
     static let mainStoryboard = "Main"
     static let dashboardStoryboard = "Dashboard"
+    static let carOwnerStoryboard = "CarOwner"
 }
 
 struct Colors {
@@ -51,4 +55,13 @@ enum Status: Int {
     case all = 0
     case active = 1
     case inactive = 2
+}
+enum OrderStatus: Int {
+    
+    case pending = 0 // "Pending"
+    case preparing = 1 // "Preparing"
+    case ready = 2 // "Ready For Pickup"
+    case done = 3 // "Done"
+    
+    case declined = 4 // "Declined"
 }
